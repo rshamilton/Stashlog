@@ -1,0 +1,1320 @@
+{
+ "version": 1,
+ "classes": [
+  {
+   "prompt": "television",
+   "name": "Television",
+   "category": "electronics"
+  },
+  {
+   "prompt": "computer monitor",
+   "name": "Monitor",
+   "category": "electronics"
+  },
+  {
+   "prompt": "laptop",
+   "name": "Laptop",
+   "category": "electronics"
+  },
+  {
+   "prompt": "desktop computer",
+   "name": "Desktop computer",
+   "category": "electronics"
+  },
+  {
+   "prompt": "computer keyboard",
+   "name": "Keyboard",
+   "category": "electronics"
+  },
+  {
+   "prompt": "computer mouse",
+   "name": "Mouse",
+   "category": "electronics"
+  },
+  {
+   "prompt": "tablet computer",
+   "name": "Tablet",
+   "category": "electronics"
+  },
+  {
+   "prompt": "smartphone",
+   "name": "Phone",
+   "category": "electronics"
+  },
+  {
+   "prompt": "DSLR camera",
+   "name": "Camera",
+   "category": "electronics"
+  },
+  {
+   "prompt": "camera",
+   "name": "Camera",
+   "category": "electronics"
+  },
+  {
+   "prompt": "camera lens",
+   "name": "Camera lens",
+   "category": "electronics"
+  },
+  {
+   "prompt": "video game console",
+   "name": "Game console",
+   "category": "electronics"
+  },
+  {
+   "prompt": "game controller",
+   "name": "Game controller",
+   "category": "electronics"
+  },
+  {
+   "prompt": "headphones",
+   "name": "Headphones",
+   "category": "electronics"
+  },
+  {
+   "prompt": "earbuds case",
+   "name": "Earbuds",
+   "category": "electronics"
+  },
+  {
+   "prompt": "speaker",
+   "name": "Speaker",
+   "category": "electronics"
+  },
+  {
+   "prompt": "soundbar",
+   "name": "Soundbar",
+   "category": "electronics"
+  },
+  {
+   "prompt": "stereo receiver",
+   "name": "Stereo receiver",
+   "category": "electronics"
+  },
+  {
+   "prompt": "record player",
+   "name": "Turntable",
+   "category": "electronics"
+  },
+  {
+   "prompt": "printer",
+   "name": "Printer",
+   "category": "electronics"
+  },
+  {
+   "prompt": "router",
+   "name": "Router",
+   "category": "electronics"
+  },
+  {
+   "prompt": "external hard drive",
+   "name": "Hard drive",
+   "category": "electronics"
+  },
+  {
+   "prompt": "smart speaker",
+   "name": "Smart speaker",
+   "category": "electronics"
+  },
+  {
+   "prompt": "smartwatch",
+   "name": "Smartwatch",
+   "category": "electronics"
+  },
+  {
+   "prompt": "e-reader",
+   "name": "E-reader",
+   "category": "electronics"
+  },
+  {
+   "prompt": "projector",
+   "name": "Projector",
+   "category": "electronics"
+  },
+  {
+   "prompt": "drone",
+   "name": "Drone",
+   "category": "electronics"
+  },
+  {
+   "prompt": "microphone",
+   "name": "Microphone",
+   "category": "electronics"
+  },
+  {
+   "prompt": "webcam",
+   "name": "Webcam",
+   "category": "electronics"
+  },
+  {
+   "prompt": "remote control",
+   "name": "Remote control",
+   "category": "electronics"
+  },
+  {
+   "prompt": "charger",
+   "name": "Charger",
+   "category": "electronics"
+  },
+  {
+   "prompt": "power strip",
+   "name": "Power strip",
+   "category": "electronics"
+  },
+  {
+   "prompt": "alarm clock",
+   "name": "Alarm clock",
+   "category": "electronics"
+  },
+  {
+   "prompt": "calculator",
+   "name": "Calculator",
+   "category": "electronics"
+  },
+  {
+   "prompt": "security camera",
+   "name": "Security camera",
+   "category": "electronics"
+  },
+  {
+   "prompt": "VR headset",
+   "name": "VR headset",
+   "category": "electronics"
+  },
+  {
+   "prompt": "electric keyboard",
+   "name": "Keyboard (music)",
+   "category": "electronics"
+  },
+  {
+   "prompt": "radio",
+   "name": "Radio",
+   "category": "electronics"
+  },
+  {
+   "prompt": "DVD player",
+   "name": "DVD player",
+   "category": "electronics"
+  },
+  {
+   "prompt": "binoculars",
+   "name": "Binoculars",
+   "category": "electronics"
+  },
+  {
+   "prompt": "telescope",
+   "name": "Telescope",
+   "category": "electronics"
+  },
+  {
+   "prompt": "tripod",
+   "name": "Tripod",
+   "category": "electronics"
+  },
+  {
+   "prompt": "refrigerator",
+   "name": "Refrigerator",
+   "category": "appliances"
+  },
+  {
+   "prompt": "microwave oven",
+   "name": "Microwave",
+   "category": "appliances"
+  },
+  {
+   "prompt": "oven",
+   "name": "Oven",
+   "category": "appliances"
+  },
+  {
+   "prompt": "stove",
+   "name": "Stove",
+   "category": "appliances"
+  },
+  {
+   "prompt": "dishwasher",
+   "name": "Dishwasher",
+   "category": "appliances"
+  },
+  {
+   "prompt": "washing machine",
+   "name": "Washing machine",
+   "category": "appliances"
+  },
+  {
+   "prompt": "clothes dryer",
+   "name": "Dryer",
+   "category": "appliances"
+  },
+  {
+   "prompt": "toaster",
+   "name": "Toaster",
+   "category": "appliances"
+  },
+  {
+   "prompt": "toaster oven",
+   "name": "Toaster oven",
+   "category": "appliances"
+  },
+  {
+   "prompt": "coffee maker",
+   "name": "Coffee maker",
+   "category": "appliances"
+  },
+  {
+   "prompt": "espresso machine",
+   "name": "Espresso machine",
+   "category": "appliances"
+  },
+  {
+   "prompt": "electric kettle",
+   "name": "Kettle",
+   "category": "appliances"
+  },
+  {
+   "prompt": "blender",
+   "name": "Blender",
+   "category": "appliances"
+  },
+  {
+   "prompt": "stand mixer",
+   "name": "Stand mixer",
+   "category": "appliances"
+  },
+  {
+   "prompt": "food processor",
+   "name": "Food processor",
+   "category": "appliances"
+  },
+  {
+   "prompt": "air fryer",
+   "name": "Air fryer",
+   "category": "appliances"
+  },
+  {
+   "prompt": "slow cooker",
+   "name": "Slow cooker",
+   "category": "appliances"
+  },
+  {
+   "prompt": "rice cooker",
+   "name": "Rice cooker",
+   "category": "appliances"
+  },
+  {
+   "prompt": "vacuum cleaner",
+   "name": "Vacuum",
+   "category": "appliances"
+  },
+  {
+   "prompt": "robot vacuum",
+   "name": "Robot vacuum",
+   "category": "appliances"
+  },
+  {
+   "prompt": "air purifier",
+   "name": "Air purifier",
+   "category": "appliances"
+  },
+  {
+   "prompt": "humidifier",
+   "name": "Humidifier",
+   "category": "appliances"
+  },
+  {
+   "prompt": "fan",
+   "name": "Fan",
+   "category": "appliances"
+  },
+  {
+   "prompt": "space heater",
+   "name": "Space heater",
+   "category": "appliances"
+  },
+  {
+   "prompt": "air conditioner",
+   "name": "Air conditioner",
+   "category": "appliances"
+  },
+  {
+   "prompt": "hair dryer",
+   "name": "Hair dryer",
+   "category": "appliances"
+  },
+  {
+   "prompt": "clothes iron",
+   "name": "Iron",
+   "category": "appliances"
+  },
+  {
+   "prompt": "sewing machine",
+   "name": "Sewing machine",
+   "category": "appliances"
+  },
+  {
+   "prompt": "electric toothbrush",
+   "name": "Electric toothbrush",
+   "category": "appliances"
+  },
+  {
+   "prompt": "water filter pitcher",
+   "name": "Water filter",
+   "category": "appliances"
+  },
+  {
+   "prompt": "treadmill",
+   "name": "Treadmill",
+   "category": "appliances"
+  },
+  {
+   "prompt": "exercise bike",
+   "name": "Exercise bike",
+   "category": "appliances"
+  },
+  {
+   "prompt": "sofa",
+   "name": "Sofa",
+   "category": "furniture"
+  },
+  {
+   "prompt": "armchair",
+   "name": "Armchair",
+   "category": "furniture"
+  },
+  {
+   "prompt": "chair",
+   "name": "Chair",
+   "category": "furniture"
+  },
+  {
+   "prompt": "office chair",
+   "name": "Office chair",
+   "category": "furniture"
+  },
+  {
+   "prompt": "stool",
+   "name": "Stool",
+   "category": "furniture"
+  },
+  {
+   "prompt": "bench",
+   "name": "Bench",
+   "category": "furniture"
+  },
+  {
+   "prompt": "dining table",
+   "name": "Dining table",
+   "category": "furniture"
+  },
+  {
+   "prompt": "coffee table",
+   "name": "Coffee table",
+   "category": "furniture"
+  },
+  {
+   "prompt": "side table",
+   "name": "Side table",
+   "category": "furniture"
+  },
+  {
+   "prompt": "nightstand",
+   "name": "Nightstand",
+   "category": "furniture"
+  },
+  {
+   "prompt": "desk",
+   "name": "Desk",
+   "category": "furniture"
+  },
+  {
+   "prompt": "bed",
+   "name": "Bed",
+   "category": "furniture"
+  },
+  {
+   "prompt": "crib",
+   "name": "Crib",
+   "category": "furniture"
+  },
+  {
+   "prompt": "dresser",
+   "name": "Dresser",
+   "category": "furniture"
+  },
+  {
+   "prompt": "chest of drawers",
+   "name": "Chest of drawers",
+   "category": "furniture"
+  },
+  {
+   "prompt": "wardrobe",
+   "name": "Wardrobe",
+   "category": "furniture"
+  },
+  {
+   "prompt": "bookshelf",
+   "name": "Bookshelf",
+   "category": "furniture"
+  },
+  {
+   "prompt": "cabinet",
+   "name": "Cabinet",
+   "category": "furniture"
+  },
+  {
+   "prompt": "TV stand",
+   "name": "TV stand",
+   "category": "furniture"
+  },
+  {
+   "prompt": "filing cabinet",
+   "name": "Filing cabinet",
+   "category": "furniture"
+  },
+  {
+   "prompt": "ottoman",
+   "name": "Ottoman",
+   "category": "furniture"
+  },
+  {
+   "prompt": "bean bag chair",
+   "name": "Bean bag",
+   "category": "furniture"
+  },
+  {
+   "prompt": "high chair",
+   "name": "High chair",
+   "category": "furniture"
+  },
+  {
+   "prompt": "shelf",
+   "name": "Shelf",
+   "category": "furniture"
+  },
+  {
+   "prompt": "storage bin",
+   "name": "Storage bin",
+   "category": "furniture"
+  },
+  {
+   "prompt": "storage basket",
+   "name": "Basket",
+   "category": "furniture"
+  },
+  {
+   "prompt": "cooking pot",
+   "name": "Pot",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "frying pan",
+   "name": "Frying pan",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "knife block",
+   "name": "Knife set",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "cutting board",
+   "name": "Cutting board",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "plate",
+   "name": "Plates",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "bowl",
+   "name": "Bowls",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "mug",
+   "name": "Mug",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "wine glass",
+   "name": "Wine glasses",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "drinking glass",
+   "name": "Glasses",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "teapot",
+   "name": "Teapot",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "french press",
+   "name": "French press",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "water bottle",
+   "name": "Water bottle",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "thermos",
+   "name": "Thermos",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "wine bottle",
+   "name": "Wine",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "baking dish",
+   "name": "Baking dish",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "mixing bowl",
+   "name": "Mixing bowl",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "cast iron skillet",
+   "name": "Cast iron skillet",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "dutch oven",
+   "name": "Dutch oven",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "kitchen scale",
+   "name": "Kitchen scale",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "spice rack",
+   "name": "Spice rack",
+   "category": "kitchen"
+  },
+  {
+   "prompt": "lamp",
+   "name": "Lamp",
+   "category": "decor"
+  },
+  {
+   "prompt": "floor lamp",
+   "name": "Floor lamp",
+   "category": "decor"
+  },
+  {
+   "prompt": "desk lamp",
+   "name": "Desk lamp",
+   "category": "decor"
+  },
+  {
+   "prompt": "ceiling light",
+   "name": "Ceiling light",
+   "category": "decor"
+  },
+  {
+   "prompt": "chandelier",
+   "name": "Chandelier",
+   "category": "decor"
+  },
+  {
+   "prompt": "candle",
+   "name": "Candle",
+   "category": "decor"
+  },
+  {
+   "prompt": "vase",
+   "name": "Vase",
+   "category": "decor"
+  },
+  {
+   "prompt": "potted plant",
+   "name": "Plant",
+   "category": "decor"
+  },
+  {
+   "prompt": "mirror",
+   "name": "Mirror",
+   "category": "decor"
+  },
+  {
+   "prompt": "wall clock",
+   "name": "Clock",
+   "category": "decor"
+  },
+  {
+   "prompt": "picture frame",
+   "name": "Picture frame",
+   "category": "decor"
+  },
+  {
+   "prompt": "rug",
+   "name": "Rug",
+   "category": "decor"
+  },
+  {
+   "prompt": "curtains",
+   "name": "Curtains",
+   "category": "decor"
+  },
+  {
+   "prompt": "pillow",
+   "name": "Pillow",
+   "category": "decor"
+  },
+  {
+   "prompt": "blanket",
+   "name": "Blanket",
+   "category": "decor"
+  },
+  {
+   "prompt": "comforter",
+   "name": "Comforter",
+   "category": "decor"
+  },
+  {
+   "prompt": "tissue box",
+   "name": "Tissue box",
+   "category": "decor"
+  },
+  {
+   "prompt": "decorative box",
+   "name": "Decorative box",
+   "category": "decor"
+  },
+  {
+   "prompt": "aquarium",
+   "name": "Aquarium",
+   "category": "decor"
+  },
+  {
+   "prompt": "globe",
+   "name": "Globe",
+   "category": "decor"
+  },
+  {
+   "prompt": "trophy",
+   "name": "Trophy",
+   "category": "decor"
+  },
+  {
+   "prompt": "painting",
+   "name": "Painting",
+   "category": "art"
+  },
+  {
+   "prompt": "framed poster",
+   "name": "Poster",
+   "category": "art"
+  },
+  {
+   "prompt": "sculpture",
+   "name": "Sculpture",
+   "category": "art"
+  },
+  {
+   "prompt": "figurine",
+   "name": "Figurine",
+   "category": "art"
+  },
+  {
+   "prompt": "collectible figure",
+   "name": "Collectible",
+   "category": "art"
+  },
+  {
+   "prompt": "vinyl record",
+   "name": "Records",
+   "category": "art"
+  },
+  {
+   "prompt": "coin collection",
+   "name": "Coins",
+   "category": "art"
+  },
+  {
+   "prompt": "wristwatch",
+   "name": "Watch",
+   "category": "jewelry"
+  },
+  {
+   "prompt": "necklace",
+   "name": "Necklace",
+   "category": "jewelry"
+  },
+  {
+   "prompt": "ring",
+   "name": "Ring",
+   "category": "jewelry"
+  },
+  {
+   "prompt": "earrings",
+   "name": "Earrings",
+   "category": "jewelry"
+  },
+  {
+   "prompt": "bracelet",
+   "name": "Bracelet",
+   "category": "jewelry"
+  },
+  {
+   "prompt": "jewelry box",
+   "name": "Jewelry box",
+   "category": "jewelry"
+  },
+  {
+   "prompt": "eyeglasses",
+   "name": "Glasses",
+   "category": "jewelry"
+  },
+  {
+   "prompt": "sunglasses",
+   "name": "Sunglasses",
+   "category": "jewelry"
+  },
+  {
+   "prompt": "jacket",
+   "name": "Jacket",
+   "category": "clothing"
+  },
+  {
+   "prompt": "coat",
+   "name": "Coat",
+   "category": "clothing"
+  },
+  {
+   "prompt": "dress",
+   "name": "Dress",
+   "category": "clothing"
+  },
+  {
+   "prompt": "suit",
+   "name": "Suit",
+   "category": "clothing"
+  },
+  {
+   "prompt": "shoes",
+   "name": "Shoes",
+   "category": "clothing"
+  },
+  {
+   "prompt": "sneakers",
+   "name": "Sneakers",
+   "category": "clothing"
+  },
+  {
+   "prompt": "boots",
+   "name": "Boots",
+   "category": "clothing"
+  },
+  {
+   "prompt": "handbag",
+   "name": "Handbag",
+   "category": "clothing"
+  },
+  {
+   "prompt": "backpack",
+   "name": "Backpack",
+   "category": "clothing"
+  },
+  {
+   "prompt": "suitcase",
+   "name": "Suitcase",
+   "category": "clothing"
+  },
+  {
+   "prompt": "duffel bag",
+   "name": "Duffel bag",
+   "category": "clothing"
+  },
+  {
+   "prompt": "wallet",
+   "name": "Wallet",
+   "category": "clothing"
+  },
+  {
+   "prompt": "hat",
+   "name": "Hat",
+   "category": "clothing"
+  },
+  {
+   "prompt": "scarf",
+   "name": "Scarf",
+   "category": "clothing"
+  },
+  {
+   "prompt": "belt",
+   "name": "Belt",
+   "category": "clothing"
+  },
+  {
+   "prompt": "tie",
+   "name": "Tie",
+   "category": "clothing"
+  },
+  {
+   "prompt": "acoustic guitar",
+   "name": "Acoustic guitar",
+   "category": "musical"
+  },
+  {
+   "prompt": "electric guitar",
+   "name": "Electric guitar",
+   "category": "musical"
+  },
+  {
+   "prompt": "bass guitar",
+   "name": "Bass guitar",
+   "category": "musical"
+  },
+  {
+   "prompt": "guitar amplifier",
+   "name": "Amplifier",
+   "category": "musical"
+  },
+  {
+   "prompt": "ukulele",
+   "name": "Ukulele",
+   "category": "musical"
+  },
+  {
+   "prompt": "violin",
+   "name": "Violin",
+   "category": "musical"
+  },
+  {
+   "prompt": "cello",
+   "name": "Cello",
+   "category": "musical"
+  },
+  {
+   "prompt": "piano",
+   "name": "Piano",
+   "category": "musical"
+  },
+  {
+   "prompt": "drum kit",
+   "name": "Drum kit",
+   "category": "musical"
+  },
+  {
+   "prompt": "saxophone",
+   "name": "Saxophone",
+   "category": "musical"
+  },
+  {
+   "prompt": "trumpet",
+   "name": "Trumpet",
+   "category": "musical"
+  },
+  {
+   "prompt": "flute",
+   "name": "Flute",
+   "category": "musical"
+  },
+  {
+   "prompt": "clarinet",
+   "name": "Clarinet",
+   "category": "musical"
+  },
+  {
+   "prompt": "harmonica",
+   "name": "Harmonica",
+   "category": "musical"
+  },
+  {
+   "prompt": "music stand",
+   "name": "Music stand",
+   "category": "musical"
+  },
+  {
+   "prompt": "bicycle",
+   "name": "Bicycle",
+   "category": "sports"
+  },
+  {
+   "prompt": "bicycle helmet",
+   "name": "Helmet",
+   "category": "sports"
+  },
+  {
+   "prompt": "dumbbell",
+   "name": "Dumbbells",
+   "category": "sports"
+  },
+  {
+   "prompt": "kettlebell",
+   "name": "Kettlebell",
+   "category": "sports"
+  },
+  {
+   "prompt": "yoga mat",
+   "name": "Yoga mat",
+   "category": "sports"
+  },
+  {
+   "prompt": "golf clubs",
+   "name": "Golf clubs",
+   "category": "sports"
+  },
+  {
+   "prompt": "tennis racket",
+   "name": "Tennis racket",
+   "category": "sports"
+  },
+  {
+   "prompt": "baseball glove",
+   "name": "Baseball glove",
+   "category": "sports"
+  },
+  {
+   "prompt": "baseball bat",
+   "name": "Baseball bat",
+   "category": "sports"
+  },
+  {
+   "prompt": "basketball",
+   "name": "Basketball",
+   "category": "sports"
+  },
+  {
+   "prompt": "soccer ball",
+   "name": "Soccer ball",
+   "category": "sports"
+  },
+  {
+   "prompt": "skateboard",
+   "name": "Skateboard",
+   "category": "sports"
+  },
+  {
+   "prompt": "snowboard",
+   "name": "Snowboard",
+   "category": "sports"
+  },
+  {
+   "prompt": "skis",
+   "name": "Skis",
+   "category": "sports"
+  },
+  {
+   "prompt": "surfboard",
+   "name": "Surfboard",
+   "category": "sports"
+  },
+  {
+   "prompt": "kayak",
+   "name": "Kayak",
+   "category": "sports"
+  },
+  {
+   "prompt": "tent",
+   "name": "Tent",
+   "category": "sports"
+  },
+  {
+   "prompt": "sleeping bag",
+   "name": "Sleeping bag",
+   "category": "sports"
+  },
+  {
+   "prompt": "camping stove",
+   "name": "Camping stove",
+   "category": "sports"
+  },
+  {
+   "prompt": "fishing rod",
+   "name": "Fishing rod",
+   "category": "sports"
+  },
+  {
+   "prompt": "scooter",
+   "name": "Scooter",
+   "category": "sports"
+  },
+  {
+   "prompt": "stroller",
+   "name": "Stroller",
+   "category": "sports"
+  },
+  {
+   "prompt": "car seat",
+   "name": "Car seat",
+   "category": "sports"
+  },
+  {
+   "prompt": "toolbox",
+   "name": "Toolbox",
+   "category": "tools"
+  },
+  {
+   "prompt": "power drill",
+   "name": "Drill",
+   "category": "tools"
+  },
+  {
+   "prompt": "circular saw",
+   "name": "Circular saw",
+   "category": "tools"
+  },
+  {
+   "prompt": "hand saw",
+   "name": "Saw",
+   "category": "tools"
+  },
+  {
+   "prompt": "hammer",
+   "name": "Hammer",
+   "category": "tools"
+  },
+  {
+   "prompt": "screwdriver",
+   "name": "Screwdriver",
+   "category": "tools"
+  },
+  {
+   "prompt": "wrench",
+   "name": "Wrench",
+   "category": "tools"
+  },
+  {
+   "prompt": "pliers",
+   "name": "Pliers",
+   "category": "tools"
+  },
+  {
+   "prompt": "tape measure",
+   "name": "Tape measure",
+   "category": "tools"
+  },
+  {
+   "prompt": "level tool",
+   "name": "Level",
+   "category": "tools"
+  },
+  {
+   "prompt": "ladder",
+   "name": "Ladder",
+   "category": "tools"
+  },
+  {
+   "prompt": "flashlight",
+   "name": "Flashlight",
+   "category": "tools"
+  },
+  {
+   "prompt": "lawn mower",
+   "name": "Lawn mower",
+   "category": "tools"
+  },
+  {
+   "prompt": "leaf blower",
+   "name": "Leaf blower",
+   "category": "tools"
+  },
+  {
+   "prompt": "garden hose",
+   "name": "Garden hose",
+   "category": "tools"
+  },
+  {
+   "prompt": "wheelbarrow",
+   "name": "Wheelbarrow",
+   "category": "tools"
+  },
+  {
+   "prompt": "shovel",
+   "name": "Shovel",
+   "category": "tools"
+  },
+  {
+   "prompt": "rake",
+   "name": "Rake",
+   "category": "tools"
+  },
+  {
+   "prompt": "grill",
+   "name": "Grill",
+   "category": "tools"
+  },
+  {
+   "prompt": "fire extinguisher",
+   "name": "Fire extinguisher",
+   "category": "tools"
+  },
+  {
+   "prompt": "tape dispenser",
+   "name": "Tape dispenser",
+   "category": "tools"
+  },
+  {
+   "prompt": "stapler",
+   "name": "Stapler",
+   "category": "tools"
+  },
+  {
+   "prompt": "scissors",
+   "name": "Scissors",
+   "category": "tools"
+  },
+  {
+   "prompt": "pencil holder",
+   "name": "Pen holder",
+   "category": "tools"
+  },
+  {
+   "prompt": "pen",
+   "name": "Pens",
+   "category": "tools"
+  },
+  {
+   "prompt": "notebook",
+   "name": "Notebook",
+   "category": "tools"
+  },
+  {
+   "prompt": "book",
+   "name": "Book",
+   "category": "books"
+  },
+  {
+   "prompt": "stack of books",
+   "name": "Books",
+   "category": "books"
+  },
+  {
+   "prompt": "magazine",
+   "name": "Magazines",
+   "category": "books"
+  },
+  {
+   "prompt": "board game",
+   "name": "Board game",
+   "category": "books"
+  },
+  {
+   "prompt": "DVD case",
+   "name": "DVDs",
+   "category": "books"
+  },
+  {
+   "prompt": "video game case",
+   "name": "Video games",
+   "category": "books"
+  },
+  {
+   "prompt": "stuffed animal",
+   "name": "Stuffed animal",
+   "category": "toys"
+  },
+  {
+   "prompt": "toy car",
+   "name": "Toy car",
+   "category": "toys"
+  },
+  {
+   "prompt": "doll",
+   "name": "Doll",
+   "category": "toys"
+  },
+  {
+   "prompt": "lego set",
+   "name": "LEGO set",
+   "category": "toys"
+  },
+  {
+   "prompt": "puzzle box",
+   "name": "Puzzle",
+   "category": "toys"
+  },
+  {
+   "prompt": "toy train",
+   "name": "Toy train",
+   "category": "toys"
+  },
+  {
+   "prompt": "building blocks",
+   "name": "Blocks",
+   "category": "toys"
+  },
+  {
+   "prompt": "chess set",
+   "name": "Chess set",
+   "category": "toys"
+  },
+  {
+   "prompt": "bottle of lotion",
+   "name": "Toiletries",
+   "category": "other"
+  },
+  {
+   "prompt": "pump bottle",
+   "name": "Toiletries",
+   "category": "other"
+  },
+  {
+   "prompt": "first aid kit",
+   "name": "First aid kit",
+   "category": "other"
+  },
+  {
+   "prompt": "umbrella",
+   "name": "Umbrella",
+   "category": "other"
+  },
+  {
+   "prompt": "safe",
+   "name": "Safe",
+   "category": "other"
+  },
+  {
+   "prompt": "trash can",
+   "name": "Trash can",
+   "category": "other"
+  },
+  {
+   "prompt": "laundry basket",
+   "name": "Laundry basket",
+   "category": "other"
+  },
+  {
+   "prompt": "cardboard box",
+   "name": "Box",
+   "category": "other"
+  },
+  {
+   "prompt": "pet bed",
+   "name": "Pet bed",
+   "category": "other"
+  },
+  {
+   "prompt": "pet crate",
+   "name": "Pet crate",
+   "category": "other"
+  },
+  {
+   "prompt": "baby monitor",
+   "name": "Baby monitor",
+   "category": "other"
+  },
+  {
+   "prompt": "bathroom scale",
+   "name": "Scale",
+   "category": "other"
+  },
+  {
+   "prompt": "smoke detector",
+   "name": "Smoke detector",
+   "category": "other"
+  }
+ ]
+}

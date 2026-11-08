@@ -19,7 +19,8 @@ Renters and homeowners who want proof of what they own *before* a fire, flood, b
 | Step | On-device technology |
 |---|---|
 | Capture one item per tap | `AVCapturePhotoOutput` ([`CaptureView`](Stashlog/Views/CaptureView.swift)) |
-| Suggest a name for the framed object | Vision `ClassifyImageRequest` on the centre and full frame, filtered to ~200 insurable item types and ranked specific-over-generic ([`ItemSuggester`](Stashlog/Capture/ItemSuggester.swift)) |
+| Find objects and pick the one you aimed at | On-device [YOLO-World v2](tools/detector/README.md) with a 263-item household vocabulary ([`ObjectDetector`](Stashlog/Capture/ObjectDetector.swift)) |
+| Backup naming for anything else | Vision `ClassifyImageRequest` on the centre and full frame, filtered to ~200 insurable item types and ranked specific-over-generic ([`ItemSuggester`](Stashlog/Capture/ItemSuggester.swift)) |
 | Read serial-number labels and receipts | Vision `RecognizeTextRequest` + pattern matching, plus Apple's **on-device** Foundation Models where available (never Private Cloud Compute) |
 | Build the report | `UIGraphicsPDFRenderer` |
 
@@ -39,7 +40,6 @@ xcodebuild -scheme Stashlog -destination 'platform=iOS Simulator,name=iPhone 13'
 ```
 
 ## Roadmap
-- [ ] Better on-device recognition with an open-vocabulary detector (YOLO-World, GPL-3.0)
 - [ ] Video walkthrough mode (code in `Stashlog/Scanning`, hidden until recognition is reliable)
 - [ ] Barcode / ISBN scanning
 - [ ] iCloud sync, using your private iCloud database (still no Stashlog servers)
@@ -49,4 +49,4 @@ xcodebuild -scheme Stashlog -destination 'platform=iOS Simulator,name=iPhone 13'
 - [ ] Warranty expiry reminders
 
 ## License
-Stashlog is licensed under the [GNU GPL v3](LICENSE). The **Stashlog name and app icon are not covered by the license**. Forks must use their own name and icon.
+Stashlog is licensed under the [GNU GPL v3](LICENSE). The bundled detector weights (YOLO-World v2 by Ultralytics) are AGPL-3.0; see [tools/detector](tools/detector/README.md). The **Stashlog name and app icon are not covered by the license**. Forks must use their own name and icon.

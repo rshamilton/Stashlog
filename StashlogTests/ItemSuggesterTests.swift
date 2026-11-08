@@ -1,3 +1,4 @@
+import CoreGraphics
 import Foundation
 import Testing
 @testable import Stashlog
@@ -46,5 +47,36 @@ struct PriceFieldTests {
     @Test func eachIsStoredAsIs() {
         #expect(PriceField.unit(from: 89.99, mode: .each, quantity: 2) == Decimal(string: "89.99"))
         #expect(PriceField.unit(from: 50, mode: .total, quantity: 1) == 50)
+    }
+}
+
+struct DetectorTests {
+    @Test func bundledDetectorLoads() {
+        let detector = ObjectDetector(bundle: .main)  // hosted tests run inside the app
+        #expect(detector.isAvailable)
+        #expect(detector.vocabularySize >= 250)
+    }
+
+    @Test func centredObjectBeatsMoreConfidentEdgeObject() {
+        let centred = DetectedObject(name: "Camera", category: .electronics, confidence: 0.5,
+                                     box: CGRect(x: 0.3, y: 0.25, width: 0.4, height: 0.4))
+        let edge = DetectedObject(name: "Lamp", category: .decor, confidence: 0.7,
+                                  box: CGRect(x: 0.0, y: 0.0, width: 0.15, height: 0.15))
+        #expect(centred.focusScore > edge.focusScore)
+    }
+
+    @Test func detectorSuggestionsComeBeforeClassifierAndDedupe() {
+        let suggester = ItemSuggester()
+        let detected = [
+            DetectedObject(name: "Camera", category: .electronics, confidence: 0.6,
+                           box: CGRect(x: 0.3, y: 0.3, width: 0.4, height: 0.4)),
+            DetectedObject(name: "Tissue box", category: .decor, confidence: 0.05,  // below threshold
+                           box: CGRect(x: 0.3, y: 0.3, width: 0.3, height: 0.3)),
+        ]
+        let classified = [Suggestion(name: "Artwork", category: .art, confidence: 0.3),
+                          Suggestion(name: "Camera", category: .electronics, confidence: 0.2)]
+        let combined = suggester.combine(detected: detected, classified: classified)
+        #expect(combined.map(\.name) == ["Camera", "Artwork"])
+        #expect(suggester.autoName(from: combined)?.name == "Camera")
     }
 }

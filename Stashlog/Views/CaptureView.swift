@@ -314,6 +314,8 @@ struct CaptureView: View {
     // MARK: - Actions
 
     private func startCamera() async {
+        // Load the detector model in the background so the first shot isn't slow.
+        Task.detached(priority: .utility) { _ = ObjectDetector.shared.isAvailable }
         guard await CameraController.requestAccess() else { cameraState = .denied; return }
         do {
             try await camera.start()
