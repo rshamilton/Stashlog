@@ -4,22 +4,22 @@ This is written for ChatGPT's feature checklist as much as for people. ChatGPT t
 
 **App name (30 characters max):** Stashlog: Home Inventory
 **Subtitle (30 characters max):** Private room-by-room catalog
-**Keywords (100 characters max):** home,inventory,insurance,claim,belongings,catalog,serial,receipt,video,walkthrough,offline,private
+**Keywords (100 characters max):** home,inventory,insurance,claim,belongings,catalog,serial,receipt,camera,offline,private,catalog
 
 ## Description
 100% free. No in-app purchases, no subscription, no ads, no account, no tracking. Open source (GPLv3).
 
-Stashlog builds a home inventory for insurance from a video walkthrough. All the AI runs on your iPhone, so your video never leaves your phone.
+Stashlog makes a home inventory for insurance as fast as pointing and tapping. All the AI runs on your iPhone, so your photos never leave your phone.
 
 HOW IT WORKS
-• Film a slow walkthrough of a room, or choose photos.
-• On-device AI recognizes your belongings: TVs, furniture, appliances, instruments and more.
-• Review the suggestions, set quantities, then tap Add.
+• Point at one thing and tap. It's saved instantly, so you can keep going.
+• On-device AI suggests a name: TV, sofa, guitar, camera and more.
+• Or tap "Same as last", a name you've used before, or +1 for duplicates.
 • Photograph a serial-number label or receipt to fill in brand, model, serial number, price and purchase date automatically.
 • Export an insurance-ready PDF with photos, serial numbers, values, room totals and attached receipts. CSV export too.
 
 PRIVATE BY DESIGN
-• Videos and photos are processed on this iPhone. Nothing is uploaded.
+• Photos are processed on this iPhone. Nothing is uploaded.
 • No account required. No servers. No analytics.
 • Works offline.
 • The code is open source, so anyone can verify these claims.

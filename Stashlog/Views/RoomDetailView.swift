@@ -7,29 +7,42 @@ struct RoomDetailView: View {
     @Environment(\.modelContext) private var context
     @AppStorage(SettingsKey.currencyCode) private var currencyCode = Locale.defaultCurrencyCode
 
-    @State private var activeScan: ScanSession?
-    @State private var recordedVideo: URL?
-    @State private var showingCamera = false
-    @State private var videoSelection: PhotosPickerItem?
+    @State private var capturing = false
     @State private var photoSelection: [PhotosPickerItem] = []
-    @State private var showingVideoPicker = false
     @State private var showingPhotoPicker = false
+    @State private var importing = false
     @State private var importError: String?
+
+    private var unreviewedCount: Int { room.items.filter(\.needsReview).count }
 
     var body: some View {
         List {
-            if room.items.isEmpty {
-                ContentUnavailableView {
-                    Label("No items yet", systemImage: "video.badge.waveform")
-                } description: {
-                    Text("Film a slow pan around \(room.name). Stashlog will suggest items for you to confirm.")
-                } actions: {
-                    scanMenu.buttonStyle(.borderedProminent)
+            Section {
+                Button {
+                    capturing = true
+                } label: {
+                    Label("Capture Items", systemImage: "camera.fill")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, minHeight: 44)
                 }
-            } else {
+                .buttonStyle(.borderedProminent)
+                .disabled(!CameraController.isAvailable)
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                .listRowBackground(Color.clear)
+            } footer: {
+                if room.items.isEmpty {
+                    Text("Point at one thing and tap. Each photo becomes an item, and Stashlog suggests a name. Photos stay on this iPhone.")
+                }
+            }
+
+            if !room.items.isEmpty {
                 Section {
                     LabeledContent("Room total") {
                         Text(room.totalValue, format: .currency(code: currencyCode)).bold()
+                    }
+                    if unreviewedCount > 0 {
+                        Label("\(unreviewedCount) to review", systemImage: "exclamationmark.circle")
+                            .foregroundStyle(.orange)
                     }
                 }
                 Section("Items") {
@@ -46,52 +59,24 @@ struct RoomDetailView: View {
         .navigationTitle(room.name)
         .navigationDestination(for: Item.self) { ItemDetailView(item: $0) }
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) { scanMenu }
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Button("Import Photos", systemImage: "photo.on.rectangle") { showingPhotoPicker = true }
+                    Button("Add Item Manually", systemImage: "square.and.pencil") { addManualItem() }
+                } label: {
+                    if importing { ProgressView() } else { Label("More", systemImage: "plus") }
+                }
+            }
         }
-        .photosPicker(isPresented: $showingVideoPicker, selection: $videoSelection, matching: .videos)
-        .photosPicker(isPresented: $showingPhotoPicker, selection: $photoSelection, maxSelectionCount: 20,
+        .photosPicker(isPresented: $showingPhotoPicker, selection: $photoSelection, maxSelectionCount: 50,
                       matching: .images)
-        .onChange(of: videoSelection) { _, item in Task { await loadVideo(item) } }
-        .onChange(of: photoSelection) { _, items in Task { await loadPhotos(items) } }
-        // Start the scan only after the camera has fully closed; presenting the review sheet
-        // mid-dismissal makes SwiftUI rebuild it.
-        .fullScreenCover(isPresented: $showingCamera, onDismiss: {
-            if let url = recordedVideo {
-                recordedVideo = nil
-                startScan(.video(url))
-            }
-        }) {
-            CameraPicker(mode: .video) { result in
-                if case let .video(url) = result { recordedVideo = url }
-                showingCamera = false
-            }
-            .ignoresSafeArea()
-        }
-        .sheet(item: $activeScan) { session in ScanReviewView(room: room, session: session) }
+        .onChange(of: photoSelection) { _, items in Task { await importPhotos(items) } }
+        .fullScreenCover(isPresented: $capturing) { CaptureView(room: room) }
         .alert("Couldn't import", isPresented: .constant(importError != nil)) {
             Button("OK") { importError = nil }
         } message: {
             Text(importError ?? "")
         }
-    }
-
-    private var scanMenu: some View {
-        Menu {
-            Button("Film Walkthrough", systemImage: "video") { showingCamera = true }
-                .disabled(!CameraPicker.isAvailable)
-            Button("Choose Video", systemImage: "film.stack") { showingVideoPicker = true }
-            Button("Choose Photos", systemImage: "photo.on.rectangle") { showingPhotoPicker = true }
-            Divider()
-            Button("Add Item Manually", systemImage: "square.and.pencil") { addManualItem() }
-        } label: {
-            Label("Add Items", systemImage: "plus")
-        }
-    }
-
-    private func startScan(_ input: ScanInput) {
-        let session = ScanSession()
-        session.start(input)
-        activeScan = session
     }
 
     private func addManualItem() {
@@ -100,31 +85,27 @@ struct RoomDetailView: View {
         context.insert(item)
     }
 
-    private func loadVideo(_ selection: PhotosPickerItem?) async {
-        guard let selection else { return }
-        defer { videoSelection = nil }
-        do {
-            guard let movie = try await selection.loadTransferable(type: VideoFile.self) else {
-                importError = "That video couldn't be loaded."
-                return
-            }
-            startScan(.video(movie.url))
-        } catch {
-            importError = error.localizedDescription
-        }
-    }
-
-    private func loadPhotos(_ selections: [PhotosPickerItem]) async {
+    /// Each imported photo becomes one item, named automatically when the suggestion is confident.
+    private func importPhotos(_ selections: [PhotosPickerItem]) async {
         guard !selections.isEmpty else { return }
-        defer { photoSelection = [] }
-        var images: [CGImage] = []
+        importing = true
+        defer { importing = false; photoSelection = [] }
+        let suggester = ItemSuggester()
+        var imported = 0
         for selection in selections {
-            if let data = try? await selection.loadTransferable(type: Data.self),
-               let image = UIImage(data: data)?.normalizedCGImage() {
-                images.append(image)
+            guard let data = try? await selection.loadTransferable(type: Data.self),
+                  let image = UIImage(data: data)?.normalizedCGImage() else { continue }
+            let item = Item(name: Item.placeholderName,
+                            photo: ItemDetector.jpeg(image, maxDimension: 1600, quality: 0.8), needsReview: true)
+            if let top = suggester.autoName(from: await suggester.suggestions(for: image)) {
+                item.name = top.name
+                item.category = top.category
             }
+            item.room = room
+            context.insert(item)
+            imported += 1
         }
-        if images.isEmpty { importError = "Those photos couldn't be loaded." } else { startScan(.photos(images)) }
+        if imported == 0 { importError = "Those photos couldn't be loaded." }
     }
 }
 
@@ -175,23 +156,6 @@ struct ItemThumbnail: View {
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: 8))
-    }
-}
-
-/// A picked video copied into the app's temporary directory so AVFoundation can read it.
-struct VideoFile: Transferable {
-    let url: URL
-
-    static var transferRepresentation: some TransferRepresentation {
-        FileRepresentation(contentType: .movie) { movie in
-            SentTransferredFile(movie.url)
-        } importing: { received in
-            let destination = FileManager.default.temporaryDirectory
-                .appendingPathComponent(UUID().uuidString)
-                .appendingPathExtension(received.file.pathExtension.isEmpty ? "mov" : received.file.pathExtension)
-            try FileManager.default.copyItem(at: received.file, to: destination)
-            return VideoFile(url: destination)
-        }
     }
 }
 

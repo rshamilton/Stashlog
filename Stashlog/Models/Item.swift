@@ -43,6 +43,10 @@ final class Item {
         self.photo = photo
     }
 
+    /// Name given to a captured item until it's named; such items show as needing review.
+    static let placeholderName = "Unnamed item"
+    var isUnnamed: Bool { name == Self.placeholderName || name.isEmpty }
+
     var category: ItemCategory {
         get { ItemCategory(rawValue: categoryRaw) ?? .other }
         set { categoryRaw = newValue.rawValue }

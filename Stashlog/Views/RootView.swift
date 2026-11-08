@@ -20,7 +20,7 @@ struct RootView: View {
                     ContentUnavailableView {
                         Label("Start with a room", systemImage: "house")
                     } description: {
-                        Text("Add a room, then film a slow walkthrough. Stashlog finds your belongings on your iPhone — nothing is uploaded.")
+                        Text("Add a room, then point your camera at each thing in it and tap. Stashlog suggests names, and nothing is uploaded.")
                     } actions: {
                         Button("Add a Room") { showingAddRoom = true }
                             .buttonStyle(.borderedProminent)
