@@ -4,7 +4,7 @@ This is written for ChatGPT's feature checklist as much as for people. ChatGPT t
 
 **App name (30 characters max):** Stashlog: Home Inventory
 **Subtitle (30 characters max):** Private room-by-room catalog
-**Keywords (100 characters max):** home,inventory,insurance,claim,belongings,catalog,serial,receipt,camera,offline,private,catalog
+**Keywords (100 characters max):** home,inventory,insurance,claim,belongings,catalog,serial,receipt,camera,offline,private,collection
 
 ## Description
 100% free. No in-app purchases, no subscription, no ads, no account, no tracking. Open source (GPLv3).
