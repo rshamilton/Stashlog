@@ -75,3 +75,29 @@ struct FrameSamplerTests {
         #expect(FrameSampler.orientation(for: CGAffineTransform(rotationAngle: .pi)) == .down)
     }
 }
+
+@MainActor
+struct ScanSessionTests {
+    /// A scan started by the session must run to a terminal state on its own,
+    /// without any view keeping a task alive.
+    @Test func videoScanRunsToCompletion() async throws {
+        let url = try await makeTestVideo()
+        let session = ScanSession()
+        session.start(.video(url))
+        session.start(.video(url))  // second call must be a no-op
+        let deadline = Date.now.addingTimeInterval(60)
+        while session.isRunning, Date.now < deadline { try await Task.sleep(for: .milliseconds(50)) }
+        #expect(session.phase == .finished)
+        #expect(!FileManager.default.fileExists(atPath: url.path))  // temp video cleaned up
+    }
+
+    @Test func cancelStopsTheScan() async throws {
+        let url = try await makeTestVideo()
+        let session = ScanSession()
+        session.start(.video(url))
+        session.cancel()
+        let deadline = Date.now.addingTimeInterval(30)
+        while session.isRunning, Date.now < deadline { try await Task.sleep(for: .milliseconds(50)) }
+        #expect(session.phase == .cancelled)
+    }
+}

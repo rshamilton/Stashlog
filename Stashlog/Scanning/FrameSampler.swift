@@ -29,9 +29,9 @@ nonisolated enum FrameSamplerError: LocalizedError {
 /// captures and edited videos), it falls back to decoding the track with `AVAssetReader`.
 nonisolated struct FrameSampler: Sendable {
     /// Seconds between samples for short videos.
-    var interval: Double = 0.75
+    var interval: Double = 1.0
     /// Upper bound so long videos stay fast; spacing widens instead.
-    var maxFrames: Int = 90
+    var maxFrames: Int = 45
     var maxDimension: CGFloat = 1280
 
     static let log = Logger(subsystem: "com.rshamilton.stashlog", category: "FrameSampler")

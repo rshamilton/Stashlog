@@ -1,14 +1,14 @@
 import SwiftData
 import SwiftUI
 
-/// Runs a scan and lets the user confirm which suggestions become inventory items.
+/// Shows a running scan and lets the user confirm which suggestions become inventory items.
+/// The scan itself is owned by `ScanSession`, not this view, so rebuilding the sheet can't stop it.
 struct ScanReviewView: View {
     let room: Room
-    let source: ScanSource
+    @Bindable var session: ScanSession
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
-    @State private var session = ScanSession()
 
     private var selectedCount: Int { session.candidates.filter(\.isSelected).count }
 
@@ -18,21 +18,21 @@ struct ScanReviewView: View {
                 .navigationTitle("Review Items")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
+                    ToolbarItem(placement: .cancellationAction) { Button("Cancel") { session.cancel(); dismiss() } }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add \(selectedCount)") { save() }
                             .disabled(session.phase != .finished || selectedCount == 0)
                     }
                 }
         }
-        .interactiveDismissDisabled(session.phase == .finished && selectedCount > 0)
-        .task { await run() }
+        // Swiping away mid-scan would leave it running unseen; use Cancel instead.
+        .interactiveDismissDisabled(session.isRunning || (session.phase == .finished && selectedCount > 0))
     }
 
     @ViewBuilder
     private var content: some View {
         switch session.phase {
-        case .idle, .extractingFrames, .detecting:
+        case .starting, .extractingFrames, .detecting:
             VStack(spacing: 16) {
                 ProgressView(value: session.progress)
                     .frame(maxWidth: 260)
@@ -43,6 +43,8 @@ struct ScanReviewView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+        case .cancelled:
+            ContentUnavailableView("Scan cancelled", systemImage: "xmark.circle")
         case let .failed(message):
             ContentUnavailableView("Scan failed", systemImage: "exclamationmark.triangle", description: Text(message))
         case .finished where session.candidates.isEmpty:
@@ -68,18 +70,7 @@ struct ScanReviewView: View {
         switch session.phase {
         case .extractingFrames: "Reading video…"
         case let .detecting(done, total): "Looking for items… \(done)/\(total)"
-        default: "Preparing…"
-        }
-    }
-
-    private func run() async {
-        guard session.phase == .idle else { return }
-        switch source.kind {
-        case let .video(url):
-            await session.scanVideo(at: url)
-            try? FileManager.default.removeItem(at: url)
-        case let .photos(images):
-            await session.scanImages(images)
+        default: "Starting…"
         }
     }
 

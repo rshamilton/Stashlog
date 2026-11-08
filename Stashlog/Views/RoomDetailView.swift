@@ -7,7 +7,8 @@ struct RoomDetailView: View {
     @Environment(\.modelContext) private var context
     @AppStorage(SettingsKey.currencyCode) private var currencyCode = Locale.defaultCurrencyCode
 
-    @State private var scanSource: ScanSource?
+    @State private var activeScan: ScanSession?
+    @State private var recordedVideo: URL?
     @State private var showingCamera = false
     @State private var videoSelection: PhotosPickerItem?
     @State private var photoSelection: [PhotosPickerItem] = []
@@ -52,14 +53,21 @@ struct RoomDetailView: View {
                       matching: .images)
         .onChange(of: videoSelection) { _, item in Task { await loadVideo(item) } }
         .onChange(of: photoSelection) { _, items in Task { await loadPhotos(items) } }
-        .fullScreenCover(isPresented: $showingCamera) {
+        // Start the scan only after the camera has fully closed; presenting the review sheet
+        // mid-dismissal makes SwiftUI rebuild it.
+        .fullScreenCover(isPresented: $showingCamera, onDismiss: {
+            if let url = recordedVideo {
+                recordedVideo = nil
+                startScan(.video(url))
+            }
+        }) {
             CameraPicker(mode: .video) { result in
+                if case let .video(url) = result { recordedVideo = url }
                 showingCamera = false
-                if case let .video(url) = result { scanSource = .video(url) }
             }
             .ignoresSafeArea()
         }
-        .sheet(item: $scanSource) { source in ScanReviewView(room: room, source: source) }
+        .sheet(item: $activeScan) { session in ScanReviewView(room: room, session: session) }
         .alert("Couldn't import", isPresented: .constant(importError != nil)) {
             Button("OK") { importError = nil }
         } message: {
@@ -80,6 +88,12 @@ struct RoomDetailView: View {
         }
     }
 
+    private func startScan(_ input: ScanInput) {
+        let session = ScanSession()
+        session.start(input)
+        activeScan = session
+    }
+
     private func addManualItem() {
         let item = Item(name: "New item")
         item.room = room
@@ -94,7 +108,7 @@ struct RoomDetailView: View {
                 importError = "That video couldn't be loaded."
                 return
             }
-            scanSource = .video(movie.url)
+            startScan(.video(movie.url))
         } catch {
             importError = error.localizedDescription
         }
@@ -110,7 +124,7 @@ struct RoomDetailView: View {
                 images.append(image)
             }
         }
-        if images.isEmpty { importError = "Those photos couldn't be loaded." } else { scanSource = .photos(images) }
+        if images.isEmpty { importError = "Those photos couldn't be loaded." } else { startScan(.photos(images)) }
     }
 }
 
@@ -162,19 +176,6 @@ struct ItemThumbnail: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: 8))
     }
-}
-
-struct ScanSource: Identifiable {
-    enum Kind {
-        case video(URL)
-        case photos([CGImage])
-    }
-
-    let id = UUID()
-    let kind: Kind
-
-    static func video(_ url: URL) -> ScanSource { ScanSource(kind: .video(url)) }
-    static func photos(_ images: [CGImage]) -> ScanSource { ScanSource(kind: .photos(images)) }
 }
 
 /// A picked video copied into the app's temporary directory so AVFoundation can read it.
