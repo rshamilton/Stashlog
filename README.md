@@ -2,7 +2,7 @@
 
 **A free, private, open-source home inventory app for iPhone.** · [Website](https://rshamilton.github.io/Stashlog/) · [Privacy](https://rshamilton.github.io/Stashlog/privacy.html)
 
- Film a slow walkthrough of each room, and Stashlog finds your belongings using on-device AI. Confirm the suggestions, add serial numbers and receipts, then export an insurance-ready PDF.
+Film a slow walkthrough of each room, and Stashlog finds your belongings using on-device AI. Confirm the suggestions, add serial numbers and receipts, then export an insurance-ready PDF.
 
 - **100% free.** No in-app purchases, no subscription, no ads.
 - **Private by design.** Videos and photos are processed on your iPhone. Stashlog has no servers, no account and no analytics. Nothing is uploaded.
