@@ -17,11 +17,13 @@
 		4ECB7552ACD298A4EA489C71 /* StashlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E23FDA371418513AAF347B /* StashlogTests.swift */; };
 		5CC2069C9A224089F2079DD3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F62650026ED284609468D0 /* Item.swift */; };
 		61142072B062E17EDC7842A5 /* ItemSuggester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EC652C66C7504330755BD /* ItemSuggester.swift */; };
+		7D917DEAC87C0A982DC145E7 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7181B342C4E75112412DAFA /* SampleData.swift */; };
 		8C46EF9CDC406F96A77DFF7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074297CA17EFB194EF6192D /* SettingsView.swift */; };
 		A3AB5D59FF99A6307462244C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726C4BA12C8925D42D24991 /* Room.swift */; };
 		AF1307EE31741452F9E2CF72 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0B01DD15C609DC641696D /* ItemDetailView.swift */; };
 		AFD4FC9237126E3044D0BB96 /* FrameSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572CA191CDBAB1A61B980DA2 /* FrameSamplerTests.swift */; };
 		B2369430A6339BA311B9F729 /* DetailsExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA16D1A9B5BB818E0E3A7A /* DetailsExtractor.swift */; };
+		BB0FB342EB68A031F89A0912 /* ItemQuickEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297163E5A4B2735FF73DA17 /* ItemQuickEditor.swift */; };
 		BC09070D957426001F77426F /* ScanSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88F3A806C82D831A503797 /* ScanSession.swift */; };
 		CAB38C7B73E4CEC1741AD12A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6BB36ECD03D9542BE3538 /* RootView.swift */; };
 		CDBB1205A15F80184B2253FD /* ItemDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE634B801D89DD542CFDD71C /* ItemDetector.swift */; };
@@ -32,6 +34,7 @@
 		EB44F034A053CB680FCC21E8 /* LabelCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E06C46690004A51E3041F9 /* LabelCatalog.swift */; };
 		EC4D62B3CB30A9B58EE600BE /* FrameSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE09F6B2967154BD07DFC /* FrameSampler.swift */; };
 		F059131DCA6E3011656909BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C514ADC190053F63912D92 /* Assets.xcassets */; };
+		F22A40A1B386F9DFB0A1379B /* PriceField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF28A6979B908A2ED8DE0D7 /* PriceField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		09794D4F2C83E06A0325715D /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		106C70EB5DA889585A894E6F /* StashlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashlogApp.swift; sourceTree = "<group>"; };
 		18129FE5063698F7BF4AE9F3 /* StashlogTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = StashlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CF28A6979B908A2ED8DE0D7 /* PriceField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceField.swift; sourceTree = "<group>"; };
 		2E3EC652C66C7504330755BD /* ItemSuggester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSuggester.swift; sourceTree = "<group>"; };
 		2E88F3A806C82D831A503797 /* ScanSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSession.swift; sourceTree = "<group>"; };
 		3074297CA17EFB194EF6192D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 		5DFA16D1A9B5BB818E0E3A7A /* DetailsExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsExtractor.swift; sourceTree = "<group>"; };
 		74C5A09537D65AE457923FB1 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		76E23FDA371418513AAF347B /* StashlogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashlogTests.swift; sourceTree = "<group>"; };
+		A7181B342C4E75112412DAFA /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		AEC176BBB57553B47BCC93F5 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		B0B6BB36ECD03D9542BE3538 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		B0C514ADC190053F63912D92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 		C2C06ED19174D05F72530D99 /* Stashlog.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Stashlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F62650026ED284609468D0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C9F0B01DD15C609DC641696D /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		D297163E5A4B2735FF73DA17 /* ItemQuickEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemQuickEditor.swift; sourceTree = "<group>"; };
 		D687784C7D1E0FA09D6301F7 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		D726C4BA12C8925D42D24991 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		EE634B801D89DD542CFDD71C /* ItemDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetector.swift; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 		4C7CA1247C40C38A451A87C0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A7181B342C4E75112412DAFA /* SampleData.swift */,
 				106C70EB5DA889585A894E6F /* StashlogApp.swift */,
 			);
 			path = App;
@@ -152,6 +159,14 @@
 			path = Export;
 			sourceTree = "<group>";
 		};
+		8B2D11E575A0244E63769F8F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2CF28A6979B908A2ED8DE0D7 /* PriceField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		AB21DEB6AF6E87456C5A980C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,9 +182,11 @@
 				FD453621907504ECF58545A2 /* CaptureView.swift */,
 				D687784C7D1E0FA09D6301F7 /* ExportView.swift */,
 				C9F0B01DD15C609DC641696D /* ItemDetailView.swift */,
+				D297163E5A4B2735FF73DA17 /* ItemQuickEditor.swift */,
 				319442A0C2EAEEC064BF86A5 /* RoomDetailView.swift */,
 				B0B6BB36ECD03D9542BE3538 /* RootView.swift */,
 				3074297CA17EFB194EF6192D /* SettingsView.swift */,
+				8B2D11E575A0244E63769F8F /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,11 +303,14 @@
 				49BADD173C5CE8753E74EE6F /* ItemCategory.swift in Sources */,
 				AF1307EE31741452F9E2CF72 /* ItemDetailView.swift in Sources */,
 				CDBB1205A15F80184B2253FD /* ItemDetector.swift in Sources */,
+				BB0FB342EB68A031F89A0912 /* ItemQuickEditor.swift in Sources */,
 				61142072B062E17EDC7842A5 /* ItemSuggester.swift in Sources */,
 				EB44F034A053CB680FCC21E8 /* LabelCatalog.swift in Sources */,
+				F22A40A1B386F9DFB0A1379B /* PriceField.swift in Sources */,
 				A3AB5D59FF99A6307462244C /* Room.swift in Sources */,
 				2B918857DB143933887A1DDD /* RoomDetailView.swift in Sources */,
 				CAB38C7B73E4CEC1741AD12A /* RootView.swift in Sources */,
+				7D917DEAC87C0A982DC145E7 /* SampleData.swift in Sources */,
 				018B755BD8882084E2E8A1C9 /* ScanAggregator.swift in Sources */,
 				BC09070D957426001F77426F /* ScanSession.swift in Sources */,
 				8C46EF9CDC406F96A77DFF7E /* SettingsView.swift in Sources */,

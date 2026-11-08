@@ -1,3 +1,4 @@
+import Foundation
 import Testing
 @testable import Stashlog
 
@@ -33,5 +34,17 @@ struct ItemSuggesterTests {
     @Test func respectsLimit() {
         let ranked = suggester.rank([("sofa", 0.5), ("lamp", 0.4), ("television", 0.3), ("vase", 0.2)], limit: 3)
         #expect(ranked.map(\.name) == ["Sofa", "Lamp", "Television"])
+    }
+}
+
+struct PriceFieldTests {
+    @Test func totalIsSplitPerUnit() {
+        #expect(PriceField.unit(from: 400, mode: .total, quantity: 4) == 100)
+        #expect(PriceField.unit(from: 100, mode: .total, quantity: 3) == Decimal(string: "33.33"))
+    }
+
+    @Test func eachIsStoredAsIs() {
+        #expect(PriceField.unit(from: 89.99, mode: .each, quantity: 2) == Decimal(string: "89.99"))
+        #expect(PriceField.unit(from: 50, mode: .total, quantity: 1) == 50)
     }
 }

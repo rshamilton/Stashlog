@@ -3,11 +3,23 @@ import SwiftUI
 
 @main
 struct StashlogApp: App {
+    let container: ModelContainer = {
+        do {
+            let container = try ModelContainer(for: Room.self, Item.self)
+            #if DEBUG
+            SampleData.seedIfRequested(into: container.mainContext)
+            #endif
+            return container
+        } catch {
+            fatalError("Couldn't open the inventory database: \(error)")
+        }
+    }()
+
     var body: some Scene {
         WindowGroup {
             RootView()
         }
-        .modelContainer(for: [Room.self, Item.self])
+        .modelContainer(container)
     }
 }
 

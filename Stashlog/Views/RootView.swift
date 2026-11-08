@@ -11,7 +11,7 @@ struct RootView: View {
     @State private var showingSettings = false
 
     private var grandTotal: Decimal { rooms.reduce(0) { $0 + $1.totalValue } }
-    private var itemCount: Int { rooms.reduce(0) { $0 + $1.items.count } }
+    private var itemCount: Int { rooms.reduce(0) { $0 + $1.items.reduce(0) { $0 + max($1.quantity, 1) } } }
 
     var body: some View {
         NavigationStack {
@@ -30,7 +30,9 @@ struct RootView: View {
                         Section {
                             LabeledContent("Items", value: "\(itemCount)")
                             LabeledContent("Estimated value") {
-                                Text(grandTotal, format: .currency(code: currencyCode)).bold()
+                                Text(grandTotal, format: .currency(code: currencyCode))
+                                    .font(.title3.weight(.bold))
+                                    .foregroundStyle(.primary)
                             }
                         }
                         Section("Rooms") {
@@ -78,13 +80,23 @@ private struct RoomRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: room.symbol)
-                .font(.title3)
-                .foregroundStyle(.tint)
-                .frame(width: 32)
+            Group {
+                if let photo = room.items.max(by: { $0.createdAt < $1.createdAt })?.photo,
+                   let image = UIImage(data: photo) {
+                    Image(uiImage: image).resizable().scaledToFill()
+                } else {
+                    Image(systemName: room.symbol)
+                        .font(.title3)
+                        .foregroundStyle(.tint)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(.tint.opacity(0.12))
+                }
+            }
+            .frame(width: 48, height: 48)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
             VStack(alignment: .leading) {
                 Text(room.name).font(.headline)
-                Text("\(room.items.count) items").font(.subheadline).foregroundStyle(.secondary)
+                Text("\(room.items.reduce(0) { $0 + max($1.quantity, 1) }) items").font(.subheadline).foregroundStyle(.secondary)
             }
             Spacer()
             Text(room.totalValue, format: .currency(code: currencyCode))

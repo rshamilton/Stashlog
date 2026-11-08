@@ -21,22 +21,40 @@ struct ItemDetailView: View {
     var body: some View {
         Form {
             Section {
-                HStack {
-                    Spacer()
-                    ItemThumbnail(data: item.photo, category: item.category)
-                        .frame(width: 160, height: 160)
-                    Spacer()
-                }
-                .listRowBackground(Color.clear)
-                imageButtons(pick: $photoPick, target: .photo, title: "Photo")
+                Color.clear
+                    .aspectRatio(4 / 3, contentMode: .fit)
+                    .overlay { ItemThumbnail(data: item.photo, category: item.category, cornerRadius: 0) }
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .overlay(alignment: .bottomTrailing) {
+                        Menu {
+                            Button("Take Photo", systemImage: "camera") { cameraTarget = .photo }
+                                .disabled(!CameraPicker.isAvailable)
+                            PhotosPicker("Choose Photo", selection: $photoPick, matching: .images)
+                        } label: {
+                            Label(item.photo == nil ? "Add Photo" : "Change", systemImage: "camera")
+                                .font(.subheadline.weight(.semibold))
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                                .background(.ultraThinMaterial, in: Capsule())
+                        }
+                        .padding(10)
+                    }
+                    .listRowInsets(EdgeInsets())
+                    .listRowBackground(Color.clear)
             }
 
             Section("Item") {
-                TextField("Name", text: $item.name)
+                TextField("Name", text: Binding(
+                    get: { item.isUnnamed ? "" : item.name },
+                    set: { item.name = $0.trimmingCharacters(in: .whitespaces).isEmpty ? Item.placeholderName : $0 }
+                ), prompt: Text("What is it?"))
+                .font(.headline)
                 Picker("Category", selection: $item.category) {
                     ForEach(ItemCategory.allCases) { Label($0.title, systemImage: $0.symbol).tag($0) }
                 }
-                Stepper("Quantity: \(item.quantity)", value: $item.quantity, in: 1...999)
+                Stepper(value: $item.quantity, in: 1...999) {
+                    LabeledContent("Quantity", value: "\(item.quantity)")
+                }
             }
 
             Section {
@@ -62,11 +80,10 @@ struct ItemDetailView: View {
             }
 
             Section {
-                TextField("Purchase price", value: $item.purchasePrice, format: .currency(code: currencyCode))
-                    .keyboardType(.decimalPad)
-                TextField("Replacement value (each)", value: $item.replacementValue,
-                          format: .currency(code: currencyCode))
-                    .keyboardType(.decimalPad)
+                PriceField(title: "Price paid", unitPrice: $item.purchasePrice,
+                           quantity: item.quantity, currencyCode: currencyCode)
+                PriceField(title: "Cost to replace today", unitPrice: $item.replacementValue,
+                           quantity: item.quantity, currencyCode: currencyCode)
                 Toggle("Known purchase date", isOn: Binding(
                     get: { item.purchaseDate != nil },
                     set: { item.purchaseDate = $0 ? (item.purchaseDate ?? .now) : nil }
@@ -95,7 +112,7 @@ struct ItemDetailView: View {
                     .lineLimit(3...8)
             }
         }
-        .navigationTitle(item.name)
+        .navigationTitle(item.isUnnamed ? "Unnamed item" : item.name)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             if item.needsReview {

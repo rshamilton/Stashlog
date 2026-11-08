@@ -16,46 +16,30 @@ struct RoomDetailView: View {
     private var unreviewedCount: Int { room.items.filter(\.needsReview).count }
 
     var body: some View {
-        List {
-            Section {
-                Button {
-                    capturing = true
-                } label: {
-                    Label("Capture Items", systemImage: "camera.fill")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity, minHeight: 44)
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(!CameraController.isAvailable)
-                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-                .listRowBackground(Color.clear)
-            } footer: {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 18) {
+                summaryCard
                 if room.items.isEmpty {
-                    Text("Point at one thing and tap. Each photo becomes an item, and Stashlog suggests a name. Photos stay on this iPhone.")
-                }
-            }
-
-            if !room.items.isEmpty {
-                Section {
-                    LabeledContent("Room total") {
-                        Text(room.totalValue, format: .currency(code: currencyCode)).bold()
-                    }
-                    if unreviewedCount > 0 {
-                        Label("\(unreviewedCount) to review", systemImage: "exclamationmark.circle")
-                            .foregroundStyle(.orange)
-                    }
-                }
-                Section("Items") {
-                    ForEach(room.sortedItems) { item in
-                        NavigationLink(value: item) { ItemRow(item: item, currencyCode: currencyCode) }
-                    }
-                    .onDelete { offsets in
-                        let items = room.sortedItems
-                        for index in offsets { context.delete(items[index]) }
+                    emptyState
+                } else {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 158), spacing: 12)], spacing: 12) {
+                        ForEach(room.sortedItems.reversed()) { item in
+                            NavigationLink(value: item) {
+                                ItemCard(item: item, currencyCode: currencyCode)
+                            }
+                            .buttonStyle(.plain)
+                            .contextMenu {
+                                Button("Delete", systemImage: "trash", role: .destructive) { context.delete(item) }
+                            }
+                        }
                     }
                 }
             }
+            .padding(16)
+            .padding(.bottom, 90)
         }
+        .background(Color(.systemGroupedBackground))
+        .safeAreaInset(edge: .bottom) { captureButton }
         .navigationTitle(room.name)
         .navigationDestination(for: Item.self) { ItemDetailView(item: $0) }
         .toolbar {
@@ -64,7 +48,7 @@ struct RoomDetailView: View {
                     Button("Import Photos", systemImage: "photo.on.rectangle") { showingPhotoPicker = true }
                     Button("Add Item Manually", systemImage: "square.and.pencil") { addManualItem() }
                 } label: {
-                    if importing { ProgressView() } else { Label("More", systemImage: "plus") }
+                    if importing { ProgressView() } else { Label("More", systemImage: "ellipsis.circle") }
                 }
             }
         }
@@ -77,6 +61,58 @@ struct RoomDetailView: View {
         } message: {
             Text(importError ?? "")
         }
+    }
+
+    private var summaryCard: some View {
+        HStack(alignment: .firstTextBaseline) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(room.totalValue, format: .currency(code: currencyCode))
+                    .font(.system(.largeTitle, design: .rounded, weight: .bold))
+                    .contentTransition(.numericText())
+                Text("\(itemCount) items").foregroundStyle(.secondary)
+            }
+            Spacer()
+            if unreviewedCount > 0 {
+                Label("\(unreviewedCount) to review", systemImage: "exclamationmark.circle.fill")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.orange)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 6)
+                    .background(.orange.opacity(0.12), in: Capsule())
+            }
+        }
+    }
+
+    private var itemCount: Int { room.items.reduce(0) { $0 + max($1.quantity, 1) } }
+
+    private var emptyState: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "camera.viewfinder")
+                .font(.system(size: 44))
+                .foregroundStyle(.tint)
+            Text("Nothing here yet").font(.title3.weight(.semibold))
+            Text("Tap Capture, point at one thing, and tap the shutter. Each photo becomes an item and Stashlog suggests a name. Photos stay on this iPhone.")
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 48)
+        .padding(.horizontal, 24)
+    }
+
+    private var captureButton: some View {
+        Button {
+            capturing = true
+        } label: {
+            Label("Capture", systemImage: "camera.fill")
+                .font(.headline)
+                .frame(maxWidth: .infinity, minHeight: 52)
+        }
+        .buttonStyle(.borderedProminent)
+        .buttonBorderShape(.capsule)
+        .disabled(!CameraController.isAvailable)
+        .padding(.horizontal, 24)
+        .padding(.bottom, 8)
     }
 
     private func addManualItem() {
@@ -109,39 +145,66 @@ struct RoomDetailView: View {
     }
 }
 
-struct ItemRow: View {
+struct ItemCard: View {
     let item: Item
     let currencyCode: String
 
     var body: some View {
-        HStack(spacing: 12) {
-            ItemThumbnail(data: item.photo, category: item.category)
-                .frame(width: 48, height: 48)
+        VStack(alignment: .leading, spacing: 0) {
+            Color.clear
+                .aspectRatio(1, contentMode: .fit)
+                .overlay { ItemThumbnail(data: item.photo, category: item.category, cornerRadius: 0) }
+                .clipped()
+                .overlay(alignment: .topLeading) {
+                    if item.needsReview {
+                        Text("Review")
+                            .font(.caption2.weight(.bold))
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(.orange, in: Capsule())
+                            .foregroundStyle(.white)
+                            .padding(8)
+                    }
+                }
+                .overlay(alignment: .topTrailing) {
+                    if item.quantity > 1 {
+                        Text("×\(item.quantity)")
+                            .font(.caption.weight(.bold).monospacedDigit())
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(.ultraThinMaterial, in: Capsule())
+                            .padding(8)
+                    }
+                }
             VStack(alignment: .leading, spacing: 2) {
-                HStack(spacing: 4) {
-                    Text(item.name).font(.headline).lineLimit(1)
-                    if item.quantity > 1 { Text("×\(item.quantity)").foregroundStyle(.secondary) }
-                }
-                if item.needsReview {
-                    Label("Needs review", systemImage: "exclamationmark.circle")
-                        .font(.caption).foregroundStyle(.orange)
-                } else if !item.makeAndModel.isEmpty {
-                    Text(item.makeAndModel).font(.caption).foregroundStyle(.secondary).lineLimit(1)
-                }
-            }
-            Spacer()
-            if let value = item.unitValue {
-                Text(value * Decimal(item.quantity), format: .currency(code: currencyCode))
-                    .font(.subheadline.monospacedDigit())
+                Text(item.isUnnamed ? "Unnamed item" : item.name)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(item.isUnnamed ? .secondary : .primary)
+                    .lineLimit(1)
+                Text(subtitle)
+                    .font(.caption)
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
             }
+            .padding(10)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .background(Color(.secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 14))
+    }
+
+    private var subtitle: String {
+        if let unit = item.unitValue {
+            return (unit * Decimal(max(item.quantity, 1))).formatted(.currency(code: currencyCode))
+        }
+        return item.makeAndModel.isEmpty ? item.category.title : item.makeAndModel
     }
 }
 
 struct ItemThumbnail: View {
     let data: Data?
     let category: ItemCategory
+    var cornerRadius: CGFloat = 8
 
     var body: some View {
         Group {
@@ -155,7 +218,7 @@ struct ItemThumbnail: View {
                     .background(.fill.tertiary)
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
     }
 }
 
