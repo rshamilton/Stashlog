@@ -33,10 +33,6 @@ final class ScanSession {
         phase = .extractingFrames
         do {
             let frames = try await sampler.frames(from: url)
-            guard !frames.isEmpty else {
-                phase = .failed("Couldn't read any frames from that video.")
-                return
-            }
             await detect(frames)
         } catch is CancellationError {
             phase = .idle

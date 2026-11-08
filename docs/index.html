@@ -4,14 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stashlog: Free, Private Home Inventory App for iPhone</title>
-  <meta name="description" content="Stashlog is a free, open-source home inventory app for iPhone. Film a room walkthrough, on-device AI lists your belongings, and you export an insurance-ready PDF. No account, no in-app purchases, nothing uploaded.">
+  <meta name="description" content="Stashlog is a free, open-source home inventory app for iPhone. Film each room, on-device AI lists your belongings, and you export an insurance-ready PDF. No account, no in-app purchases, nothing uploaded.">
   <link rel="canonical" href="https://rshamilton.github.io/Stashlog/">
   <link rel="icon" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
-  <meta property="og:title" content="Stashlog: Free, Private Home Inventory for iPhone">
-  <meta property="og:description" content="Film a room. On-device AI lists your belongings. Export an insurance-ready PDF. Free, open source, nothing uploaded.">
+  <meta property="og:title" content="Stashlog: a home inventory you'll actually finish">
+  <meta property="og:description" content="Film each room. Your iPhone lists what it sees. Export a report your insurer can use. Free, open source, nothing uploaded.">
   <meta property="og:image" content="https://rshamilton.github.io/Stashlog/icon.png">
   <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
@@ -33,6 +36,7 @@
       "No account required",
       "No in-app purchases, no subscription, no ads",
       "Works offline",
+      "Works on iPhones without Apple Intelligence",
       "Open source (GPLv3)"
     ]
   }
@@ -45,9 +49,9 @@
       {"@type": "Question", "name": "Is Stashlog really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every feature is free: unlimited rooms, unlimited items and unlimited PDF reports. There are no in-app purchases, no subscription and no ads."}},
       {"@type": "Question", "name": "Does Stashlog upload my video or photos?", "acceptedAnswer": {"@type": "Answer", "text": "No. Stashlog has no servers. Videos and photos are analyzed on your iPhone using Apple's Vision framework. Nothing leaves your phone unless you share an export yourself."}},
       {"@type": "Question", "name": "Can I make a home inventory by filming a video of each room?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Film a slow walkthrough of a room. Stashlog samples frames, recognizes items such as TVs, furniture, appliances and instruments on-device, and suggests an item list with quantities for you to confirm."}},
-      {"@type": "Question", "name": "Will my insurance company accept the PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Stashlog's PDF includes what insurers typically ask for: a room-by-room itemized list, photos, make and model, serial numbers, purchase dates and prices, replacement values, totals and attached receipts. No app can guarantee acceptance, so check with your insurer."}},
+      {"@type": "Question", "name": "Will my insurance company accept the PDF?", "acceptedAnswer": {"@type": "Answer", "text": "The report includes what insurers typically ask for: a room-by-room itemized list, photos, make and model, serial numbers, purchase dates and prices, replacement values, totals and attached receipts. No app can guarantee acceptance, so check with your insurer."}},
       {"@type": "Question", "name": "Does it need an account or internet connection?", "acceptedAnswer": {"@type": "Answer", "text": "No account is required and the app works offline."}},
-      {"@type": "Question", "name": "Which iPhones does Stashlog support?", "acceptedAnswer": {"@type": "Answer", "text": "Any iPhone running iOS 26 or later, including iPhone 11, 12 and 13. Scanning uses Apple's Vision framework, which does not require Apple Intelligence. On iPhones with Apple Intelligence, label reading is further improved by Apple's on-device model."}},
+      {"@type": "Question", "name": "Which iPhones does Stashlog support?", "acceptedAnswer": {"@type": "Answer", "text": "Any iPhone running iOS 26 or later, including iPhone 11, 12 and 13. Scanning uses Apple's Vision framework, which does not require Apple Intelligence."}},
       {"@type": "Question", "name": "Is Stashlog open source?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The full source code is on GitHub under the GPLv3 license, so anyone can verify the privacy claims."}}
     ]
   }
@@ -55,77 +59,110 @@
 </head>
 <body>
   <div class="wrap">
-    <header class="site">
+    <header class="top">
       <a class="brand" href="./"><img src="icon.png" alt="">Stashlog</a>
       <nav>
+        <a href="#report">Report</a>
         <a href="#faq">FAQ</a>
-        <a href="support.html">Support</a>
+        <a href="support.html">Help</a>
         <a href="privacy.html">Privacy</a>
       </nav>
     </header>
 
     <div class="hero">
-      <img class="icon" src="icon.png" alt="Stashlog app icon">
-      <h1>Your home inventory,<br>from one walkthrough.</h1>
-      <p class="lead">Film a room. Stashlog's on-device AI lists what it sees. Add serial numbers and receipts, then export an insurance-ready PDF.</p>
-      <ul class="pills">
-        <li>100% free</li>
-        <li>No in-app purchases</li>
-        <li>No account</li>
-        <li>Nothing uploaded</li>
-        <li>Works offline</li>
-        <li>Open source</li>
-      </ul>
-      <a class="button" href="https://github.com/rshamilton/Stashlog">View on GitHub</a>
-      <p class="note">Coming soon to the App Store · iPhone · iOS 26 or later</p>
+      <div>
+        <p class="kicker">Home inventory for iPhone · Free</p>
+        <h1>Write down everything you own, before you need to.</h1>
+        <p>Film each room. Your iPhone works out what's in it. Add serial numbers and receipts, then keep a report your insurer can use.</p>
+        <div class="cta">
+          <a class="button" href="https://github.com/rshamilton/Stashlog">Source on GitHub</a>
+          <small>App Store: coming soon · iOS 26+</small>
+        </div>
+      </div>
+
+      <div class="tag" aria-label="Example inventory entry">
+        <div class="room">Living room · 03 of 41</div>
+        <div class="item">Television</div>
+        <dl>
+          <dt>Make</dt><dd>Samsung QN65Q80C</dd>
+          <dt>S/N</dt><dd>0A1B3CXR500123W</dd>
+          <dt>Bought</dt><dd>Mar 14, 2024</dd>
+          <dt>Value</dt><dd>$1,199.99</dd>
+          <dt>Receipt</dt><dd>attached</dd>
+        </dl>
+        <span class="stamp">Logged</span>
+      </div>
     </div>
 
     <section>
-      <h2>How it works</h2>
-      <ol class="steps">
-        <li><strong>Film a walkthrough</strong>Pan slowly around a room, or choose photos you already have.</li>
-        <li><strong>Review suggestions</strong>Stashlog recognizes TVs, furniture, appliances, instruments and more, with quantities. Keep what's right.</li>
-        <li><strong>Add the details</strong>Photograph a serial-number label or receipt. Brand, model, serial number, price and date are filled in for you.</li>
-        <li><strong>Export the report</strong>A room-by-room PDF with photos, values, totals and receipts, plus a CSV. Keep a copy off your phone.</li>
+      <h2>A walkthrough, not a weekend</h2>
+      <p class="sub">Most people never finish a home inventory because typing in 300 things is miserable. Stashlog starts the list for you.</p>
+      <ol class="ledger">
+        <li><div><strong>Film a room</strong><span>Walk in, pan slowly, walk out. Or pick photos you already took.</span></div></li>
+        <li><div><strong>Check the list</strong><span>Stashlog suggests what it saw (sofa, TV, lamps ×2, guitar) with a photo of each. Untick anything wrong.</span></div></li>
+        <li><div><strong>Snap the labels</strong><span>Photograph the sticker on the back of the TV or the receipt. Brand, model, serial number, price and date fill in.</span></div></li>
+        <li><div><strong>Export and store it somewhere safe</strong><span>A PDF and a spreadsheet. Email it to yourself or put it in iCloud Drive, so it survives if the house (and the phone) doesn't.</span></div></li>
       </ol>
     </section>
 
-    <section>
-      <h2>What you get, for free</h2>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Feature</th><th>Stashlog</th></tr></thead>
-          <tbody>
-            <tr><td>Video walkthrough → item list</td><td class="yes">Yes</td></tr>
-            <tr><td>AI runs entirely on your iPhone</td><td class="yes">Yes</td></tr>
-            <tr><td>Video and photos never uploaded</td><td class="yes">Yes</td></tr>
-            <tr><td>Reads serial numbers, model numbers and receipts</td><td class="yes">Yes, on-device</td></tr>
-            <tr><td>Insurance-ready PDF with photos and receipts</td><td class="yes">Yes, unlimited</td></tr>
-            <tr><td>CSV export</td><td class="yes">Yes</td></tr>
-            <tr><td>Unlimited rooms and items</td><td class="yes">Yes</td></tr>
-            <tr><td>Account required</td><td class="yes">No</td></tr>
-            <tr><td>In-app purchases, subscription or ads</td><td class="yes">None</td></tr>
-            <tr><td>Works offline</td><td class="yes">Yes</td></tr>
-            <tr><td>Open source</td><td class="yes">Yes (GPLv3)</td></tr>
-            <tr><td>Works without Apple Intelligence (iPhone 11, 12, 13…)</td><td class="yes">Yes</td></tr>
-          </tbody>
-        </table>
+    <section id="report">
+      <div class="split">
+        <div>
+          <h2>The report</h2>
+          <p class="sub">Laid out the way an adjuster reads it: room by room, with photos, make and model, serial numbers, what you paid, what it costs to replace, and totals. Receipts go in the back.</p>
+          <ul class="facts">
+            <li>Unlimited rooms, items and reports</li>
+            <li>PDF for your insurer, CSV for your spreadsheet</li>
+            <li>Your name, address and policy number on page one</li>
+          </ul>
+        </div>
+        <div class="sheet" role="img" aria-label="Example page from a Stashlog report">
+          <header><b>Living Room</b><span>Room total $4,718.97</span></header>
+          <table>
+            <tr><td>Television<span class="meta">Electronics · Samsung QN65Q80C · S/N 0A1B3CXR500123W</span></td><td class="v">$1,199.99</td></tr>
+            <tr><td>Sofa<span class="meta">Furniture · Bought Jun 2022 · Receipt attached</span></td><td class="v">$1,850.00</td></tr>
+            <tr><td>Acoustic guitar<span class="meta">Musical · Taylor 214ce · S/N 2109284117</span></td><td class="v">$1,299.00</td></tr>
+            <tr><td>Lamp ×2<span class="meta">Decor &amp; Lighting · $89.99 each</span></td><td class="v">$179.98</td></tr>
+            <tr><td>Speakers<span class="meta">Electronics · Sonos Era 100</span></td><td class="v">$190.00</td></tr>
+            <tfoot><tr><td>5 lines · 6 items</td><td class="v">$4,718.97</td></tr></tfoot>
+          </table>
+        </div>
       </div>
     </section>
 
-    <section id="faq">
-      <h2>Questions</h2>
-      <details><summary>Is Stashlog really free?</summary><p>Yes. Every feature is free: unlimited rooms, unlimited items and unlimited PDF reports. There are no in-app purchases, no subscription and no ads.</p></details>
-      <details><summary>Does Stashlog upload my video or photos?</summary><p>No. Stashlog has no servers. Videos and photos are analyzed on your iPhone using Apple's Vision framework. Nothing leaves your phone unless you share an export yourself.</p></details>
-      <details><summary>Can I make a home inventory by filming a video of each room?</summary><p>Yes. Film a slow walkthrough. Stashlog samples frames, recognizes items on-device, and suggests an item list with quantities for you to confirm. You stay in control: nothing is added until you tap Add.</p></details>
-      <details><summary>Will my insurance company accept the PDF?</summary><p>The report includes what insurers typically ask for: a room-by-room itemized list, photos, make and model, serial numbers, purchase dates and prices, replacement values, totals and attached receipts. No app can guarantee acceptance, so check with your insurer.</p></details>
-      <details><summary>What if my phone is lost in the same fire or flood?</summary><p>Export your PDF and keep a copy somewhere else: iCloud Drive, email, or a USB drive. iCloud device backup also covers Stashlog's data.</p></details>
-      <details><summary>Which iPhones are supported?</summary><p>Any iPhone running iOS 26 or later, including iPhone 11, 12 and 13. Scanning doesn't require Apple Intelligence. On iPhones that have it, label reading gets an extra boost from Apple's on-device model.</p></details>
-      <details><summary>Is it open source?</summary><p>Yes. The <a href="https://github.com/rshamilton/Stashlog">full source code</a> is on GitHub under the GPLv3 license, so anyone can check the privacy claims.</p></details>
+    <section>
+      <div class="split">
+        <div>
+          <h2>Your house stays on your phone</h2>
+          <p class="sub">A video of every room, with every valuable in it, is about the last thing that should sit on someone else's server. So it doesn't.</p>
+        </div>
+        <ul class="facts">
+          <li>Recognition runs on the iPhone with Apple's Vision framework</li>
+          <li>No account, no servers, no analytics, no ads</li>
+          <li>Works offline, and on iPhones without Apple Intelligence</li>
+          <li>Free, with nothing to unlock later</li>
+          <li>Open source (GPLv3), so you don't have to take my word for it</li>
+        </ul>
+      </div>
     </section>
 
-    <footer class="site">
-      Stashlog is free and open source (GPLv3). · <a href="privacy.html">Privacy policy</a> · <a href="support.html">Support</a> · <a href="https://github.com/rshamilton/Stashlog">Source code</a>
+    <section id="faq" class="faq">
+      <h2>Questions</h2>
+      <h3>Is it really free?</h3>
+      <p>Yes. Unlimited rooms, items and PDF reports. No in-app purchases, no subscription, no ads.</p>
+      <h3>Does it upload my video or photos?</h3>
+      <p>No. Stashlog has no servers. Video and photos are analyzed on your iPhone, and nothing leaves it unless you share an export yourself.</p>
+      <h3>Will my insurance company accept the PDF?</h3>
+      <p>It includes what insurers usually ask for: an itemized list by room, photos, make and model, serial numbers, purchase dates and prices, replacement values, totals and receipts. No app can promise acceptance, so it's worth asking your insurer.</p>
+      <h3>Which iPhones work?</h3>
+      <p>Any iPhone on iOS 26 or later, including iPhone 11, 12 and 13. Scanning doesn't need Apple Intelligence.</p>
+      <h3>Can I see the code?</h3>
+      <p>All of it, on <a href="https://github.com/rshamilton/Stashlog">GitHub</a>, under the GPLv3 license.</p>
+    </section>
+
+    <footer class="bottom">
+      <span>Stashlog · free and open source</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="support.html">Help</a> · <a href="https://github.com/rshamilton/Stashlog">GitHub</a></span>
     </footer>
   </div>
 </body>

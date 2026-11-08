@@ -17,6 +17,7 @@
 		8C46EF9CDC406F96A77DFF7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074297CA17EFB194EF6192D /* SettingsView.swift */; };
 		A3AB5D59FF99A6307462244C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726C4BA12C8925D42D24991 /* Room.swift */; };
 		AF1307EE31741452F9E2CF72 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0B01DD15C609DC641696D /* ItemDetailView.swift */; };
+		AFD4FC9237126E3044D0BB96 /* FrameSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572CA191CDBAB1A61B980DA2 /* FrameSamplerTests.swift */; };
 		B2369430A6339BA311B9F729 /* DetailsExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA16D1A9B5BB818E0E3A7A /* DetailsExtractor.swift */; };
 		BC09070D957426001F77426F /* ScanSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88F3A806C82D831A503797 /* ScanSession.swift */; };
 		CAB38C7B73E4CEC1741AD12A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6BB36ECD03D9542BE3538 /* RootView.swift */; };
@@ -49,6 +50,7 @@
 		462C92E723B4129FB658F366 /* InventoryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReport.swift; sourceTree = "<group>"; };
 		4BFEC9A037FCC8F7632D0AF7 /* ScanReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanReviewView.swift; sourceTree = "<group>"; };
 		54E06C46690004A51E3041F9 /* LabelCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCatalog.swift; sourceTree = "<group>"; };
+		572CA191CDBAB1A61B980DA2 /* FrameSamplerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSamplerTests.swift; sourceTree = "<group>"; };
 		5DFA16D1A9B5BB818E0E3A7A /* DetailsExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsExtractor.swift; sourceTree = "<group>"; };
 		74C5A09537D65AE457923FB1 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		76E23FDA371418513AAF347B /* StashlogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashlogTests.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		2A3148429E9BFB4A73BDE93C /* StashlogTests */ = {
 			isa = PBXGroup;
 			children = (
+				572CA191CDBAB1A61B980DA2 /* FrameSamplerTests.swift */,
 				76E23FDA371418513AAF347B /* StashlogTests.swift */,
 			);
 			path = StashlogTests;
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFD4FC9237126E3044D0BB96 /* FrameSamplerTests.swift in Sources */,
 				4ECB7552ACD298A4EA489C71 /* StashlogTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
