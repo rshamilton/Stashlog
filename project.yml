@@ -1,0 +1,60 @@
+name: Stashlog
+options:
+  bundleIdPrefix: com.argtime
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+    SWIFT_APPROACHABLE_CONCURRENCY: YES
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+targets:
+  Stashlog:
+    type: application
+    platform: iOS
+    sources:
+      - path: Stashlog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.argtime.stashlog
+        PRODUCT_NAME: Stashlog
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_KEY_CFBundleDisplayName: Stashlog
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+        INFOPLIST_KEY_NSCameraUsageDescription: "Stashlog uses the camera to film rooms and photograph your belongings, receipts, and serial-number labels. Everything is processed on your iPhone and never uploaded."
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "The camera records audio with walkthrough videos. Stashlog never uses or uploads the audio."
+  StashlogTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: StashlogTests
+    dependencies:
+      - target: Stashlog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.argtime.stashlog.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Stashlog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stashlog"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+schemes:
+  Stashlog:
+    build:
+      targets:
+        Stashlog: all
+        StashlogTests: [test]
+    test:
+      targets:
+        - StashlogTests

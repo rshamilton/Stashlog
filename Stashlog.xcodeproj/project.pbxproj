@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		018B755BD8882084E2E8A1C9 /* ScanAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0DF4E8A5EE4CE75F4751D /* ScanAggregator.swift */; };
+		2B918857DB143933887A1DDD /* RoomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319442A0C2EAEEC064BF86A5 /* RoomDetailView.swift */; };
+		478FAFCE498F457F03BB7FC2 /* InventoryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C92E723B4129FB658F366 /* InventoryReport.swift */; };
+		49BADD173C5CE8753E74EE6F /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC176BBB57553B47BCC93F5 /* ItemCategory.swift */; };
+		4ECB7552ACD298A4EA489C71 /* StashlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E23FDA371418513AAF347B /* StashlogTests.swift */; };
+		5CC2069C9A224089F2079DD3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F62650026ED284609468D0 /* Item.swift */; };
+		5F6EF1801BC4B08731926478 /* ScanReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFEC9A037FCC8F7632D0AF7 /* ScanReviewView.swift */; };
+		8C46EF9CDC406F96A77DFF7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074297CA17EFB194EF6192D /* SettingsView.swift */; };
+		A3AB5D59FF99A6307462244C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726C4BA12C8925D42D24991 /* Room.swift */; };
+		AF1307EE31741452F9E2CF72 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0B01DD15C609DC641696D /* ItemDetailView.swift */; };
+		B2369430A6339BA311B9F729 /* DetailsExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA16D1A9B5BB818E0E3A7A /* DetailsExtractor.swift */; };
+		BC09070D957426001F77426F /* ScanSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88F3A806C82D831A503797 /* ScanSession.swift */; };
+		CAB38C7B73E4CEC1741AD12A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6BB36ECD03D9542BE3538 /* RootView.swift */; };
+		CDBB1205A15F80184B2253FD /* ItemDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE634B801D89DD542CFDD71C /* ItemDetector.swift */; };
+		D6C281A236C19BE011B1D493 /* StashlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C70EB5DA889585A894E6F /* StashlogApp.swift */; };
+		DDF4B12769864CCA0E3FBE25 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5A09537D65AE457923FB1 /* CameraPicker.swift */; };
+		E89FF6A29CE140A1ED5E05A9 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687784C7D1E0FA09D6301F7 /* ExportView.swift */; };
+		EB44F034A053CB680FCC21E8 /* LabelCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E06C46690004A51E3041F9 /* LabelCatalog.swift */; };
+		EC4D62B3CB30A9B58EE600BE /* FrameSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE09F6B2967154BD07DFC /* FrameSampler.swift */; };
+		F059131DCA6E3011656909BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C514ADC190053F63912D92 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A59959D4B2CDC1F8BFA4C7BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3356282A80D093859EDF4914 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0BEF8F63455E18827FBC796;
+			remoteInfo = Stashlog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03CAE09F6B2967154BD07DFC /* FrameSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSampler.swift; sourceTree = "<group>"; };
+		106C70EB5DA889585A894E6F /* StashlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashlogApp.swift; sourceTree = "<group>"; };
+		18129FE5063698F7BF4AE9F3 /* StashlogTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = StashlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E88F3A806C82D831A503797 /* ScanSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSession.swift; sourceTree = "<group>"; };
+		3074297CA17EFB194EF6192D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		319442A0C2EAEEC064BF86A5 /* RoomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailView.swift; sourceTree = "<group>"; };
+		462C92E723B4129FB658F366 /* InventoryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReport.swift; sourceTree = "<group>"; };
+		4BFEC9A037FCC8F7632D0AF7 /* ScanReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanReviewView.swift; sourceTree = "<group>"; };
+		54E06C46690004A51E3041F9 /* LabelCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCatalog.swift; sourceTree = "<group>"; };
+		5DFA16D1A9B5BB818E0E3A7A /* DetailsExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsExtractor.swift; sourceTree = "<group>"; };
+		74C5A09537D65AE457923FB1 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		76E23FDA371418513AAF347B /* StashlogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashlogTests.swift; sourceTree = "<group>"; };
+		AEC176BBB57553B47BCC93F5 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
+		B0B6BB36ECD03D9542BE3538 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B0C514ADC190053F63912D92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2C06ED19174D05F72530D99 /* Stashlog.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Stashlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8F62650026ED284609468D0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C9F0B01DD15C609DC641696D /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		D687784C7D1E0FA09D6301F7 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
+		D726C4BA12C8925D42D24991 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		EE634B801D89DD542CFDD71C /* ItemDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetector.swift; sourceTree = "<group>"; };
+		F5E0DF4E8A5EE4CE75F4751D /* ScanAggregator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanAggregator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		039F8B1714D59515FEE8F3D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2C06ED19174D05F72530D99 /* Stashlog.app */,
+				18129FE5063698F7BF4AE9F3 /* StashlogTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19E12222D01AEC28C0DA3054 /* Scanning */ = {
+			isa = PBXGroup;
+			children = (
+				5DFA16D1A9B5BB818E0E3A7A /* DetailsExtractor.swift */,
+				03CAE09F6B2967154BD07DFC /* FrameSampler.swift */,
+				EE634B801D89DD542CFDD71C /* ItemDetector.swift */,
+				54E06C46690004A51E3041F9 /* LabelCatalog.swift */,
+				F5E0DF4E8A5EE4CE75F4751D /* ScanAggregator.swift */,
+				2E88F3A806C82D831A503797 /* ScanSession.swift */,
+			);
+			path = Scanning;
+			sourceTree = "<group>";
+		};
+		1C3A3C5937A7C03C7C7EFFDE = {
+			isa = PBXGroup;
+			children = (
+				EEA6EDB0BEA72E33FD0996B3 /* Stashlog */,
+				2A3148429E9BFB4A73BDE93C /* StashlogTests */,
+				039F8B1714D59515FEE8F3D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A3148429E9BFB4A73BDE93C /* StashlogTests */ = {
+			isa = PBXGroup;
+			children = (
+				76E23FDA371418513AAF347B /* StashlogTests.swift */,
+			);
+			path = StashlogTests;
+			sourceTree = "<group>";
+		};
+		2BEE6CE022E62E463D22263C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C8F62650026ED284609468D0 /* Item.swift */,
+				AEC176BBB57553B47BCC93F5 /* ItemCategory.swift */,
+				D726C4BA12C8925D42D24991 /* Room.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C7CA1247C40C38A451A87C0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				106C70EB5DA889585A894E6F /* StashlogApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		771B7C5BB11BF9B071C90C37 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				462C92E723B4129FB658F366 /* InventoryReport.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
+		AB21DEB6AF6E87456C5A980C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0C514ADC190053F63912D92 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE83DB56D6C3367CCEEA6EE5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74C5A09537D65AE457923FB1 /* CameraPicker.swift */,
+				D687784C7D1E0FA09D6301F7 /* ExportView.swift */,
+				C9F0B01DD15C609DC641696D /* ItemDetailView.swift */,
+				319442A0C2EAEEC064BF86A5 /* RoomDetailView.swift */,
+				B0B6BB36ECD03D9542BE3538 /* RootView.swift */,
+				4BFEC9A037FCC8F7632D0AF7 /* ScanReviewView.swift */,
+				3074297CA17EFB194EF6192D /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EEA6EDB0BEA72E33FD0996B3 /* Stashlog */ = {
+			isa = PBXGroup;
+			children = (
+				4C7CA1247C40C38A451A87C0 /* App */,
+				771B7C5BB11BF9B071C90C37 /* Export */,
+				2BEE6CE022E62E463D22263C /* Models */,
+				AB21DEB6AF6E87456C5A980C /* Resources */,
+				19E12222D01AEC28C0DA3054 /* Scanning */,
+				DE83DB56D6C3367CCEEA6EE5 /* Views */,
+			);
+			path = Stashlog;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5FCFAB399F82A902CF28A72 /* StashlogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EEF0B8E09E113E9BE64C067 /* Build configuration list for PBXNativeTarget "StashlogTests" */;
+			buildPhases = (
+				843B6DE46E6930A4E251AFF3 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A422F38A318A1D22EB239FFA /* PBXTargetDependency */,
+			);
+			name = StashlogTests;
+			packageProductDependencies = (
+			);
+			productName = StashlogTests;
+			productReference = 18129FE5063698F7BF4AE9F3 /* StashlogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0BEF8F63455E18827FBC796 /* Stashlog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51DF37BDF6C3444D5630E328 /* Build configuration list for PBXNativeTarget "Stashlog" */;
+			buildPhases = (
+				469BDDFCD70C34DBD4550A6A /* Sources */,
+				B9BED95EF74285D7AE9F286E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stashlog;
+			packageProductDependencies = (
+			);
+			productName = Stashlog;
+			productReference = C2C06ED19174D05F72530D99 /* Stashlog.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3356282A80D093859EDF4914 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = B86AB3009D6AA6E4312D0C95 /* Build configuration list for PBXProject "Stashlog" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 1C3A3C5937A7C03C7C7EFFDE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 039F8B1714D59515FEE8F3D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0BEF8F63455E18827FBC796 /* Stashlog */,
+				B5FCFAB399F82A902CF28A72 /* StashlogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9BED95EF74285D7AE9F286E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F059131DCA6E3011656909BF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		469BDDFCD70C34DBD4550A6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDF4B12769864CCA0E3FBE25 /* CameraPicker.swift in Sources */,
+				B2369430A6339BA311B9F729 /* DetailsExtractor.swift in Sources */,
+				E89FF6A29CE140A1ED5E05A9 /* ExportView.swift in Sources */,
+				EC4D62B3CB30A9B58EE600BE /* FrameSampler.swift in Sources */,
+				478FAFCE498F457F03BB7FC2 /* InventoryReport.swift in Sources */,
+				5CC2069C9A224089F2079DD3 /* Item.swift in Sources */,
+				49BADD173C5CE8753E74EE6F /* ItemCategory.swift in Sources */,
+				AF1307EE31741452F9E2CF72 /* ItemDetailView.swift in Sources */,
+				CDBB1205A15F80184B2253FD /* ItemDetector.swift in Sources */,
+				EB44F034A053CB680FCC21E8 /* LabelCatalog.swift in Sources */,
+				A3AB5D59FF99A6307462244C /* Room.swift in Sources */,
+				2B918857DB143933887A1DDD /* RoomDetailView.swift in Sources */,
+				CAB38C7B73E4CEC1741AD12A /* RootView.swift in Sources */,
+				018B755BD8882084E2E8A1C9 /* ScanAggregator.swift in Sources */,
+				5F6EF1801BC4B08731926478 /* ScanReviewView.swift in Sources */,
+				BC09070D957426001F77426F /* ScanSession.swift in Sources */,
+				8C46EF9CDC406F96A77DFF7E /* SettingsView.swift in Sources */,
+				D6C281A236C19BE011B1D493 /* StashlogApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843B6DE46E6930A4E251AFF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECB7552ACD298A4EA489C71 /* StashlogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A422F38A318A1D22EB239FFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0BEF8F63455E18827FBC796 /* Stashlog */;
+			targetProxy = A59959D4B2CDC1F8BFA4C7BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		275FEA440CC4571089A451AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.argtime.stashlog.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stashlog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stashlog";
+			};
+			name = Release;
+		};
+		27DE3B7AE0F4559D60231705 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.argtime.stashlog.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stashlog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stashlog";
+			};
+			name = Debug;
+		};
+		817DDAFC1873250D30831CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		C41DDC4EFFB9FC70E43F94D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Stashlog;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Stashlog uses the camera to film rooms and photograph your belongings, receipts, and serial-number labels. Everything is processed on your iPhone and never uploaded.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The camera records audio with walkthrough videos. Stashlog never uses or uploads the audio.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.argtime.stashlog;
+				PRODUCT_NAME = Stashlog;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D550CB8FB2F7462324DB4787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Stashlog;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Stashlog uses the camera to film rooms and photograph your belongings, receipts, and serial-number labels. Everything is processed on your iPhone and never uploaded.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The camera records audio with walkthrough videos. Stashlog never uses or uploads the audio.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.argtime.stashlog;
+				PRODUCT_NAME = Stashlog;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F4BB86D1746F3D8311BDA3A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EEF0B8E09E113E9BE64C067 /* Build configuration list for PBXNativeTarget "StashlogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27DE3B7AE0F4559D60231705 /* Debug */,
+				275FEA440CC4571089A451AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		51DF37BDF6C3444D5630E328 /* Build configuration list for PBXNativeTarget "Stashlog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C41DDC4EFFB9FC70E43F94D5 /* Debug */,
+				D550CB8FB2F7462324DB4787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B86AB3009D6AA6E4312D0C95 /* Build configuration list for PBXProject "Stashlog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				817DDAFC1873250D30831CF5 /* Debug */,
+				F4BB86D1746F3D8311BDA3A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3356282A80D093859EDF4914 /* Project object */;
+}
