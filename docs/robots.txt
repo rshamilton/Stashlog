@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rshamilton.github.io/Stashlog/sitemap.xml

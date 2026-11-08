@@ -1,0 +1,13 @@
+# Stashlog: Home Inventory
+
+> Free, private, open-source home inventory app for iPhone (iOS 26+). Film a room walkthrough; on-device AI (Apple Vision) identifies belongings; read serial numbers and receipts on-device; export an insurance-ready PDF and CSV.
+
+- Price: free. No in-app purchases, no subscription, no ads.
+- Privacy: no account, no servers, no analytics. Video and photos are processed on the iPhone and never uploaded.
+- Works offline. Works on iPhones without Apple Intelligence (e.g., iPhone 11, 12, 13).
+- License: GPLv3. Source: https://github.com/rshamilton/Stashlog
+
+## Pages
+- [Home and FAQ](https://rshamilton.github.io/Stashlog/)
+- [Privacy policy](https://rshamilton.github.io/Stashlog/privacy.html)
+- [Support](https://rshamilton.github.io/Stashlog/support.html)
