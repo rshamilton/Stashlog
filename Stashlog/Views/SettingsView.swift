@@ -42,7 +42,7 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Link(destination: URL(string: "https://github.com/argtime/Stashlog")!) {
+                    Link(destination: URL(string: "https://github.com/rshamilton/Stashlog")!) {
                         Label("Source code (GPLv3)", systemImage: "chevron.left.forwardslash.chevron.right")
                     }
                 } footer: {
