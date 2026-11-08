@@ -24,6 +24,7 @@
 		AF1307EE31741452F9E2CF72 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0B01DD15C609DC641696D /* ItemDetailView.swift */; };
 		AFD4FC9237126E3044D0BB96 /* FrameSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572CA191CDBAB1A61B980DA2 /* FrameSamplerTests.swift */; };
 		B2369430A6339BA311B9F729 /* DetailsExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA16D1A9B5BB818E0E3A7A /* DetailsExtractor.swift */; };
+		B250E0CCB00CF0693112FB2E /* TitleReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB4AE68113B377A5A49F0B /* TitleReader.swift */; };
 		B89FD890E20D614D6431AB24 /* DetectorVocabulary.json in Resources */ = {isa = PBXBuildFile; fileRef = F86578A1FE5E2C3A6131914E /* DetectorVocabulary.json */; };
 		BB0FB342EB68A031F89A0912 /* ItemQuickEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297163E5A4B2735FF73DA17 /* ItemQuickEditor.swift */; };
 		BC09070D957426001F77426F /* ScanSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88F3A806C82D831A503797 /* ScanSession.swift */; };
@@ -80,6 +81,7 @@
 		D297163E5A4B2735FF73DA17 /* ItemQuickEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemQuickEditor.swift; sourceTree = "<group>"; };
 		D687784C7D1E0FA09D6301F7 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		D726C4BA12C8925D42D24991 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		E2DB4AE68113B377A5A49F0B /* TitleReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleReader.swift; sourceTree = "<group>"; };
 		EE634B801D89DD542CFDD71C /* ItemDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetector.swift; sourceTree = "<group>"; };
 		F5E0DF4E8A5EE4CE75F4751D /* ScanAggregator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanAggregator.swift; sourceTree = "<group>"; };
 		F86578A1FE5E2C3A6131914E /* DetectorVocabulary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DetectorVocabulary.json; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				402B83A98F09D144B1B466C2 /* CameraPreview.swift */,
 				2E3EC652C66C7504330755BD /* ItemSuggester.swift */,
 				A7AC8BB9F22DA55C38936542 /* ObjectDetector.swift */,
+				E2DB4AE68113B377A5A49F0B /* TitleReader.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				BC09070D957426001F77426F /* ScanSession.swift in Sources */,
 				8C46EF9CDC406F96A77DFF7E /* SettingsView.swift in Sources */,
 				D6C281A236C19BE011B1D493 /* StashlogApp.swift in Sources */,
+				B250E0CCB00CF0693112FB2E /* TitleReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

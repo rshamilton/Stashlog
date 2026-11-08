@@ -359,14 +359,15 @@ struct CaptureView: View {
         nameDraft = ""
         suggestions = []
 
-        let found = await suggester.suggestions(for: image)
+        let result = await suggester.analyze(image)
         // Auto-name only if it's still unnamed (the user may have typed meanwhile).
-        if item.isUnnamed, let top = suggester.autoName(from: found) {
+        if item.isUnnamed, let top = result.autoName {
             item.name = top.name
             item.category = top.category
+            if item.brand.isEmpty, let author = result.author { item.brand = author }
             if current === item, nameDraft.isEmpty { nameDraft = top.name }
         }
-        if current === item { suggestions = found }
+        if current === item { suggestions = result.chips }
     }
 
     private func readDetails(from image: CGImage, isReceipt: Bool) async {

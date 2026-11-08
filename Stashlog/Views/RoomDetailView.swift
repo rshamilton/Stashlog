@@ -133,9 +133,11 @@ struct RoomDetailView: View {
                   let image = UIImage(data: data)?.normalizedCGImage() else { continue }
             let item = Item(name: Item.placeholderName,
                             photo: ItemDetector.jpeg(image, maxDimension: 1600, quality: 0.8), needsReview: true)
-            if let top = suggester.autoName(from: await suggester.suggestions(for: image)) {
+            let result = await suggester.analyze(image)
+            if let top = result.autoName {
                 item.name = top.name
                 item.category = top.category
+                if let author = result.author { item.brand = author }
             }
             item.room = room
             context.insert(item)

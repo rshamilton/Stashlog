@@ -1,5 +1,5 @@
 {
- "version": 1,
+ "version": 2,
  "classes": [
   {
    "prompt": "television",
@@ -182,7 +182,7 @@
    "category": "electronics"
   },
   {
-   "prompt": "electric keyboard",
+   "prompt": "digital piano",
    "name": "Keyboard (music)",
    "category": "electronics"
   },
@@ -707,12 +707,12 @@
    "category": "decor"
   },
   {
-   "prompt": "painting",
+   "prompt": "painting hanging on a wall",
    "name": "Painting",
    "category": "art"
   },
   {
-   "prompt": "framed poster",
+   "prompt": "poster hanging on a wall",
    "name": "Poster",
    "category": "art"
   },
@@ -1173,7 +1173,7 @@
   },
   {
    "prompt": "pen",
-   "name": "Pens",
+   "name": "Pen",
    "category": "tools"
   },
   {
@@ -1315,6 +1315,41 @@
    "prompt": "smoke detector",
    "name": "Smoke detector",
    "category": "other"
+  },
+  {
+   "prompt": "USB hub",
+   "name": "USB hub",
+   "category": "electronics"
+  },
+  {
+   "prompt": "computer cable",
+   "name": "Cable",
+   "category": "electronics"
+  },
+  {
+   "prompt": "power adapter",
+   "name": "Power adapter",
+   "category": "electronics"
+  },
+  {
+   "prompt": "ballpoint pen",
+   "name": "Pen",
+   "category": "tools"
+  },
+  {
+   "prompt": "mouse pad",
+   "name": "Mouse pad",
+   "category": "electronics"
+  },
+  {
+   "prompt": "sticky notes",
+   "name": "Sticky notes",
+   "category": "tools"
+  },
+  {
+   "prompt": "paperback book",
+   "name": "Book",
+   "category": "books"
   }
  ]
 }

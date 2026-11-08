@@ -19,13 +19,6 @@ nonisolated struct DetectedObject: Sendable, Equatable {
     /// Normalized to 0...1, origin top-left.
     let box: CGRect
 
-    /// How likely this is the thing the user aimed at: confident, near the centre, and not tiny.
-    var focusScore: Float {
-        let dx = box.midX - 0.5, dy = box.midY - 0.45  // the reticle sits slightly above centre
-        let centrality = max(0, 1 - sqrt(dx * dx + dy * dy) / 0.5)
-        let size = min(1, (box.width * box.height) / 0.12)
-        return confidence * Float(0.35 + 0.65 * centrality) * Float(0.45 + 0.55 * size)
-    }
 }
 
 /// Open-vocabulary household object detector (YOLO-World v2 with Stashlog's vocabulary baked in),
@@ -63,7 +56,7 @@ nonisolated final class ObjectDetector: Sendable {
                 let box = observation.boundingBox.toImageCoordinates(CGSize(width: 1, height: 1), origin: .upperLeft)
                 return DetectedObject(name: entry.name, category: entry.category, confidence: top.confidence, box: box)
             }
-            .sorted { $0.focusScore > $1.focusScore }
+            .sorted { $0.confidence > $1.confidence }
     }
 
     private static func loadVocabulary(from bundle: Bundle) -> [String: VocabularyEntry] {
